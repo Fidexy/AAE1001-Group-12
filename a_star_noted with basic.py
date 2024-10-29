@@ -1,6 +1,5 @@
-
 """
-
+g
 A* grid planning
 
 author: Atsushi Sakai(@Atsushi_twi)
@@ -20,10 +19,35 @@ import matplotlib.pyplot as plt
 
 show_animation = True
 
+class Scenario:
+    def __init__(self, FCost, Pnum, TCost, MaxFlight):
+        self.FCost = FCost
+        self.PNum = Pnum
+        self.TCost = TCost  
+        self.MaxFlight = MaxFlight      
+    def __str__(self):
+        return str(self.FCost) + "," + str(self.PNum) + "," + str(self.TCost) + "," + str(self.MaxFlight)
+S1 = Scenario(0.76, 3000, 2, 12)
+S2 = Scenario(0.88, 1250, 3, 25)
+S3 = Scenario(0.95, 2500, 1, 25)           
+
+class Aircraft: # define aircraft models
+    def __init__(self, FComp, PCap, TCostLow, TCostMid, TCostHi, FixedCost):
+        self.FComp = FComp
+        self.PCap = PCap
+        self.TCostLow = TCostLow
+        self.TCostMid = TCostMid
+        self.TCostHi = TCostHi
+        self.FixedCost = FixedCost
+    def __str__(self):
+            return str(self.FComp) + "," + str(self.PCap) + "," + str(self.TCostLow) + "," + str(self.TCostMid) + "," + str(self.TCostHi)
+A321Neo = Aircraft(54, 200, 10, 15, 20, 1800)
+A330 = Aircraft(84, 300, 15, 21, 27, 2000)
+A350 = Aircraft(90, 250, 20, 27, 34, 2500) 
 
 class AStarPlanner:
 
-    def __init__(self, ox, oy, resolution, rr, fc_x, fc_y, tc_x, tc_y):
+    def __init__(self, ox, oy, resolution, rr, fc_x, fc_y, tc_x, tc_y, js_x, js_y):
         """
         Initialize grid map for a star planning
 
@@ -46,14 +70,25 @@ class AStarPlanner:
         self.fc_y = fc_y
         self.tc_x = tc_x
         self.tc_y = tc_y
+        self.js_x = js_x
+        self.js_y = js_y
         
 
         self.Delta_C1 = 0.2 # cost intensive area 1 modifier
         self.Delta_C2 = 1 # cost intensive area 2 modifier
+        self.Delta_C3 = 0 #jetstream
 
         self.costPerGrid = 1 
-
-
+   
+    class Flight:
+        def __init__(self, scenario, aircraft, flightnum, flightcost)
+            self.scenario = scenario
+            self.aircraft = aircraft
+            self.flightnum = flightnum
+            self.flightcost = flightcost
+        def __str__(self):
+            return str(flightnum) + "," + str(flightcost)
+        
     class Node: # definition of a sinle node
         def __init__(self, x, y, cost, parent_index):
             self.x = x  # index of grid
@@ -113,11 +148,41 @@ class AStarPlanner:
 
             # reaching goal
             if current.x == goal_node.x and current.y == goal_node.y:
-                print("Total Trip time required -> ",current.cost )
+                print("Total trip time required -> ",current.cost )
                 goal_node.parent_index = current.parent_index
                 goal_node.cost = current.cost
+                print("Scenario 1:")
+                print("Per flight cost with A321 Neo-> ",(0.76*A321Neo.FComp*current.cost+A321Neo.TCostMid*current.cost+A321Neo.FixedCost)*math.ceil(S1.PNum/A321Neo.PCap))
+                print("Per flight cost with A330-900 Neo-> ",0.76*A330.FComp*current.cost+A330.TCostMid*current.cost+A330.FixedCost)
+                print("Per flight cost with A350-900-> ",0.76*A350.FComp*current.cost+A350.TCostMid*current.cost+A350.FixedCost)
+                if (math.ceil(S1.PNum/A321Neo.PCap)>S1.MaxFlight):
+                    print("A321 Neo cannot be used for this scenario as the maximum number of flights will be exceeded")
+                if (math.ceil(S1.PNum/A330.PCap)>S1.MaxFlight):
+                    print("A330-900 Neo cannot be used for this scenario as the maximum number of flights will be exceeded")
+                if (math.ceil(S1.PNum/A350.PCap)>S1.MaxFlight):
+                    print("A350-900 cannot be used for this scenario as the maximum number of flights will be exceeded")
+                print("Scenario 2")
+                print("Per flight cost with A321 Neo-> " )
+                print("Per flight cost with A330-900 Neo-> ")
+                print("Per flight cost with A350-900-> ")
+                if (math.ceil(S2.PNum/A321Neo.PCap)>S2.MaxFlight):
+                    print("A321 Neo cannot be used for this scenario as the maximum number of flights will be exceeded")
+                if (math.ceil(S2.PNum/A330.PCap)>S2.MaxFlight):
+                    print("A330-900 Neo cannot be used for this scenario as the maximum number of flights will be exceeded")
+                if (math.ceil(S2.PNum/A350.PCap)>S2.MaxFlight):
+                    print("A350-900 cannot be used for this scenario as the maximum number of flights will be exceeded")
+                print("Scenario 3:")
+                print("Per flight cost with A321 Neo-> ", )
+                print("Per flight cost with A330-900 Neo-> ")
+                print("Per flight cost with A350-900-> ")
+                if (math.ceil(S3.PNum/A321Neo.PCap)>S3.MaxFlight):
+                    print("A321 Neo cannot be used for this scenario as the maximum number of flights will be exceeded")
+                if (math.ceil(S3.PNum/A350.PCap)>S3.MaxFlight):
+                    print("A330-900 Neo cannot be used for this scenario as the maximum number of flights will be exceeded")
+                if (math.ceil(S3.PNum/A350.PCap)>S3.MaxFlight):
+                    print("A350-900 cannot be used for this scenario as the maximum number of flights will be exceeded")
                 break
-
+#S.FCost*FComp*current.cost+TCost*current.cost+FCost
             # Remove the item from the open set
             del open_set[c_id]
 
@@ -143,6 +208,12 @@ class AStarPlanner:
                     if self.calc_grid_position(node.y, self.min_y) in self.fc_y:
                         # print("cost intensive area!!")
                         node.cost = node.cost + self.Delta_C2 * self.motion[i][2]
+                    # print()
+                # remove cost in jetstream area    
+                if self.calc_grid_position(node.x, self.min_x) in self.js_x:
+                    if self.calc_grid_position(node.y, self.min_y) in self.js_y:
+                        # print("jetstream area!!")
+                        node.cost = node.cost - self.Delta_C3 * self.motion[i][2]
                     # print()
                 
                 n_id = self.calc_grid_index(node)
@@ -348,6 +419,12 @@ def main():
             fc_x.append(i)
             fc_y.append(j)
 
+    # set Jetstream area
+    js_x, js_y = [], []
+    for i in range(-10, 60):
+        for j in range(35, 40):
+            js_x.append(i)
+            js_y.append(j)
 
     if show_animation:  # pragma: no cover
         plt.plot(ox, oy, ".k") # plot the obstacle
@@ -356,11 +433,12 @@ def main():
         
         plt.plot(fc_x, fc_y, "oy") # plot the cost intensive area 1
         plt.plot(tc_x, tc_y, "or") # plot the cost intensive area 2
+        plt.plot(js_x, js_y,)
 
         plt.grid(True) # plot the grid to the plot panel
         plt.axis("equal") # set the same resolution for x and y axis 
 
-    a_star = AStarPlanner(ox, oy, grid_size, robot_radius, fc_x, fc_y, tc_x, tc_y)
+    a_star = AStarPlanner(ox, oy, grid_size, robot_radius, fc_x, fc_y, tc_x, tc_y, js_x, js_y)
     rx, ry = a_star.planning(sx, sy, gx, gy)
 
     if show_animation:  # pragma: no cover
