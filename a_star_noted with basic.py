@@ -79,15 +79,19 @@ class AStarPlanner:
         self.Delta_C3 = 0 #jetstream
 
         self.costPerGrid = 1 
-   
+
+# Calculate the stats of each flight depending on the plane and scenario
     class Flight:
-        def __init__(self, scenario, aircraft, flightnum, flightcost)
+        def __init__(self, scenario, aircraft, flightnum, flighttime, flightcost, timecost, fixedcost)
             self.scenario = scenario
             self.aircraft = aircraft
             self.flightnum = flightnum
+        self.flighttime = flightttime
             self.flightcost = flightcost
+            self.timecost = timecost
+            self.fixedcost = fixedcost
         def __str__(self):
-            return str(flightnum) + "," + str(flightcost)
+            return str(scenario) + "," + str(aircraft) + "," + str(flightnum) + "," + str(flighttime) + "," + str(flightcost) + "," + str(timecost) + "," str(fixedcost)
         
     class Node: # definition of a sinle node
         def __init__(self, x, y, cost, parent_index):
