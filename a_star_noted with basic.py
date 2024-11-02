@@ -20,13 +20,13 @@ import matplotlib.pyplot as plt
 show_animation = True
 
 class Scenario:
-    def __init__(self, FCost, Pnum, TCost, MaxFlight):
+    def __init__(self, FCost, Pnum, TCostFactor, MaxFlight):
         self.FCost = FCost
         self.PNum = Pnum
-        self.TCost = TCost  
+        self.TCostFactor = TCostFactor  
         self.MaxFlight = MaxFlight      
     def __str__(self):
-        return str(self.FCost) + "," + str(self.PNum) + "," + str(self.TCost) + "," + str(self.MaxFlight)
+        return str(self.FCost) + "," + str(self.PNum) + "," + str(self.TCostFactor) + "," + str(self.MaxFlight)
 S1 = Scenario(0.76, 3000, 2, 12)
 S2 = Scenario(0.88, 1250, 3, 25)
 S3 = Scenario(0.95, 2500, 1, 25)           
@@ -108,9 +108,21 @@ class AStarPlanner:
             ry: y position list of the final path
         """
         class FlightStat:
-            def __init__(self, cost, overcap):
+            def __init__(self, cost, overcap, exceedlim):
                 self.cost = cost
                 self.overcap = overcap
+        
+        def flight(scenario, aircraft):
+            if scenario.TCostFactor == 1:
+                TCost = aircraft.TCostLow
+            elif scenario.TCostFactor == 2:
+                TCost = aircraft.TCostMid
+            else:
+                TCost = aircraft.TCostHi
+            # cost =
+            flightnum = math.ceil(scenario.PNum/aircraft.PCap)
+            return FlightStat(TCost)
+
         
         start_node = self.Node(self.calc_xy_index(sx, self.min_x), # calculate the index based on given position
                                self.calc_xy_index(sy, self.min_y), 0.0, -1) # set cost zero, set parent index -1
