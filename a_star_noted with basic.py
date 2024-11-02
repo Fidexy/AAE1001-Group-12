@@ -81,17 +81,6 @@ class AStarPlanner:
         self.costPerGrid = 1 
 
 # Calculate the stats of each flight depending on the plane and scenario
-    class Flight:
-        def __init__(self, scenario, aircraft, flightnum, flighttime, flightcost, timecost, fixedcost)
-            self.scenario = scenario
-            self.aircraft = aircraft
-            self.flightnum = flightnum
-        self.flighttime = flightttime
-            self.flightcost = flightcost
-            self.timecost = timecost
-            self.fixedcost = fixedcost
-        def __str__(self):
-            return str(scenario) + "," + str(aircraft) + "," + str(flightnum) + "," + str(flighttime) + "," + str(flightcost) + "," + str(timecost) + "," str(fixedcost)
         
     class Node: # definition of a sinle node
         def __init__(self, x, y, cost, parent_index):
@@ -118,7 +107,11 @@ class AStarPlanner:
             rx: x position list of the final path
             ry: y position list of the final path
         """
-
+        class FlightStat:
+            def __init__(self, cost, overcap):
+                self.cost = cost
+                self.overcap = overcap
+        
         start_node = self.Node(self.calc_xy_index(sx, self.min_x), # calculate the index based on given position
                                self.calc_xy_index(sy, self.min_y), 0.0, -1) # set cost zero, set parent index -1
         goal_node = self.Node(self.calc_xy_index(gx, self.min_x), # calculate the index based on given position
