@@ -119,8 +119,9 @@ class AStarPlanner:
                 TCost = aircraft.TCostMid
             else:
                 TCost = aircraft.TCostHi
-            # cost =
+            cost = scenario.FCost*aircraft.FComp*current.cost + TCost*current.cost + aircraft.FCost
             flightnum = math.ceil(scenario.PNum/aircraft.PCap)
+            exceedlim = flightnum > scenario.MaxFlight
             return FlightStat(TCost)
 
         
@@ -161,9 +162,9 @@ class AStarPlanner:
                 goal_node.parent_index = current.parent_index
                 goal_node.cost = current.cost
                 print("Scenario 1:")
-                print("Per flight cost with A321 Neo-> ",(0.76*A321Neo.FComp*current.cost+A321Neo.TCostMid*current.cost+A321Neo.FixedCost)*math.ceil(S1.PNum/A321Neo.PCap))
-                print("Per flight cost with A330-900 Neo-> ",0.76*A330.FComp*current.cost+A330.TCostMid*current.cost+A330.FixedCost)
-                print("Per flight cost with A350-900-> ",0.76*A350.FComp*current.cost+A350.TCostMid*current.cost+A350.FixedCost)
+                print("Per flight cost with A321 Neo-> ")
+                print("Per flight cost with A330-900 Neo-> ")
+                print("Per flight cost with A350-900-> ")
                 if (math.ceil(S1.PNum/A321Neo.PCap)>S1.MaxFlight):
                     print("A321 Neo cannot be used for this scenario as the maximum number of flights will be exceeded")
                 if (math.ceil(S1.PNum/A330.PCap)>S1.MaxFlight):
