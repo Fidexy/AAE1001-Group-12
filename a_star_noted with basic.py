@@ -433,7 +433,7 @@ def main():
     
     js_x, js_y = [], []
     for i in range(-10, 60):
-        for j in range(35, 40):
+        for j in range(40, 45):
             js_x.append(i)
             js_y.append(j)
 
