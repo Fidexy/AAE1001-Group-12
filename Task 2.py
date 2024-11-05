@@ -76,7 +76,7 @@ class AStarPlanner:
 
         self.Delta_C1 = 0.2 # cost intensive area 1 modifier
         self.Delta_C2 = 1 # cost intensive area 2 modifier
-        self.Delta_C3 = 0 #jetstream
+        self.Delta_C3 = 1 #jetstream
 
         self.costPerGrid = 1 
 
