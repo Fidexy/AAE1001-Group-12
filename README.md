@@ -29,11 +29,11 @@ LEUNG tsz hei
 <details open="open">
   <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
 
-* [Introduction](#Introduction)
+* [Introduction](introduction)
 * [Task 1](#task-1)
 * [Task 2](#task-2)
 * [Task 3](#task-3)
-* [Reflections](#Reflections)
+* [Reflections](#reflections)
 * [Contacts](#contacts)
 
 
