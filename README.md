@@ -30,7 +30,6 @@ LEUNG tsz hei
   <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
 
 * [Introduction](#Introduction)
-* [Project Video](#Project-Video)
 * [Task 1](#task-1)
 * [Task 2](#task-2)
 * [Task 3](#task-3)
@@ -100,14 +99,39 @@ A350: 2500/350=8 flights
 
 A321: $$( 0 . 9 5 54 8 3 . 2 2 5 + 1 0 8 3 . 2 2 5 + 1 8 0 0 ) 1 3 = \$ 8 9 7 2 2 . 0 0 2 5$$
 
-
-## Task 3
-
-
-
 A330: $$( 0 . 9 5 84 8 3 . 2 2 5 + 1 5 8 3 . 2 2 5 + 2 0 0 0 ) 9 = \$ 8 9 0 0 7 . 5 7$$
 
 A350: $$( 0 . 9 5 90 8 3 . 2 2 5 + 2 0 8 3 . 2 2 5 + 2 5 0 0 ) 8 = \$ 9 0 2 4 1 . 9$$
 
 So, A321 would be chosen.
+
+
+
+# Task 3
+#### Introduction
+
+## Aircraft Spectifications
+#### Passenger Capacity
+- Minimum: 100
+- Maximum: 450
+
+#### Cost Calculations
+- **Base Cost Time (CT):** $12/min
+- **Increments:** For every 50 passengers, CT increases by $2/min
+
+#### Engine Configuration
+- **Twin-Engine:** For capacity < 300
+- **Four-Engine:** For capacity ≥ 300
+
+#### Fuel Consumption
+- Each engine consumes 20 kg/min
+
+#### Fixed Costs
+- = 2000 for twin-engine
+- = 2500 for four-engine
+
+#### Fuel Cost
+
+
+#### General Calculation Method
 
