@@ -4,8 +4,8 @@
   
 # Members name
 
-**Leader:** 
-
+**Leader:**
+AU bai qiao
 
 **Member 1:** 
 LEUNG tsz hei
@@ -29,10 +29,12 @@ LEUNG tsz hei
 <details open="open">
   <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
 
-* [Introduction](introduction)
+* [Introduction](#introduction)
 * [Task 1](#task-1)
+* [Task 1 (Bonus)](#task-1-bonus)
 * [Task 2](#task-2)
 * [Task 3](#task-3)
+* [Task 4](#task-4)
 * [Reflections](#reflections)
 * [Contacts](#contacts)
 
@@ -158,11 +160,20 @@ LEUNG tsz hei
 
 **Conclusion**: *A321 Neo* is chosen.
 
+***
+
+## Task 1 (Bonus) 
 
 
 # Task 3
 #### Introduction
-In this task, the new aircraft will be designed to achieve minimum cost for [scenario 1](#Scenario-1) in task 1. Different type of aircarft design will be compared through the table and the explanation will be mentioned below. Currently, the airline sometimes use different aircraft for the same route of flight in order to maximize the profit. 
+In this task, the new aircraft will be designed to achieve minimum cost for [scenario 1](#Scenario-1) in task 1. Different type of aircarft design will be compared through the table and the explanation will be mentioned below. Currently, the airline sometimes use different aircraft for the same route of flight during peak seaon in order to maximize the profit. 
+
+## Scenario 1
+- **Passengers**: 3000 people
+- **Time Limit**: 1 week
+- **Maximum Flights**: 12 per week
+- **Time Cost**: Medium
 
 ## Aircraft Spectifications
 #### Aircraft Name: A350-800 Max
@@ -189,7 +200,7 @@ In this task, the new aircraft will be designed to achieve minimum cost for [sce
 
 #### Fuel Cost
 ![螢幕擷取畫面 2024-11-05 193551](https://github.com/user-attachments/assets/82a46e6b-aaa4-440a-b7c6-cab5f1d5aeda)
-- The global average jet fuel price last week fell 0.5% compared to the week before to $89.11/bbl. -> $0.655/kg
+- The global average jet fuel price last week fell 0.5% compared to the week before to $88.26/bbl. -> $0.649/kg (Asia)
   
 #### General Calculation Method
   <h3 align="center"> Trip Cost=CT×Best Cruise Time+Total Fuel Cost+CC </h3>
@@ -198,20 +209,20 @@ In this task, the new aircraft will be designed to achieve minimum cost for [sce
 ## Our calculation
 | **Passenger Capacity** | **Time cost**| **Fixed cost** | **Engines** | **Fuel consumption** | **Flights needed** | **Cost per flight** | **Scenario 1 cost** | **Exceeds Flight Limit** |
 | ------------------ | --------- | ---------- | ------- | ---------------- | -------------- | --------------- | --------------- | --------------------- |
-| 100                | 16        | 2000       | 2       | 40               | 30             | 5860.48         | 165331.2        | *yes*                   |
-| 150                | 18        | 2000       | 2       | 40               | 20             | 6026.88         | 113548.8        | *yes*                   |
-| 200                | 20        | 2000       | 2       | 40               | 15             | 6193.28         | 87657.6         | *yes*                   |
-| 250                | 22        | 2000       | 2       | 40               | 12             | 6359.68         | 72122.88        | no                    |
-| 300                | 24        | 2500       | 4       | 80               | 10             | 9555.36         | 88564.8         | no                    |
-| 350                | 26        | 2500       | 4       | 80               | 9              | 9721.76         | 81205.92        | no                    |
-| 400                | 28        | 2500       | 4       | 80               | 8              | 9888.16         | 73514.24        | no                    |
-| 450                | 30        | 2500       | 4       | 80               | 7              | 10054.56        | 65489.76        | no                    |
+| 100                | 16        | 2000       | 2       | 40               | 30             | 5491.07         | 164732.16        | *yes*                   |
+| 150                | 18        | 2000       | 2       | 40               | 20             | 5657.47         | 113149.44        | *yes*                   |
+| 200                | 20        | 2000       | 2       | 40               | 15             | 5823.87         | 87358.08         | *yes*                   |
+| 250                | 22        | 2000       | 2       | 40               | 12             | 5990.27         | 71883.26         | no                    |
+| 300                | 24        | 2500       | 4       | 80               | 10             | 8816.54         | 88165.44         | no                    |
+| 350                | 26        | 2500       | 4       | 80               | 9              | 8982.94         | 80846.49         | no                    |
+| 400                | 28        | 2500       | 4       | 80               | 8              | 9149.34         | 73194.75         | no                    |
+| 450                | 30        | 2500       | 4       | 80               | 7              | 9315.74         | 65210.20         | no                    |
 
 
-### Result: The minimum flight cost is $65489.76 ;with 450 passenger capacity; 4 engines configuration
+### Result: The minimum flight cost is $65210.20 ; with 450 passenger capacity ; 4 engines configuration
  - The design of 100-200 passenger capacity is not suitable because it exceed the flight limit for 12 flight per week maximum.
  - The overall result shows that use a four-engine configuration for capacities over 300 can maximize the number of passengers per flight, minimize the number of flights and balancing costs.
- - 
+ - In the environmental aspect, the four-engine configuration might produce more carbon emissions and green house gas. Though the cost of four-engine is slightly lower than twin-engine.
 
 ![Scenario 1 cost based on passenger capacity ](https://github.com/user-attachments/assets/29622e57-1527-43fa-9ad3-6ef5c77e6d90)
 
