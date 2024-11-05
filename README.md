@@ -1,8 +1,48 @@
-PolyU AAE1001 GitHub Project Group12
+<p align="center">
+
+  <h3 align="center">PolyU AAE1001 GitHub Project Group12 </h3>
+  
+# Members name
+
+**Leader:** 
 
 
+**Member 1:** 
+LEUNG tsz hei
 
-Scenario1
+**Member 2:** 
+
+
+**Member 3:**
+
+
+**Member 4:**
+
+
+**Member 5:**
+
+
+**Member 6:**
+
+
+<!-- TABLE OF CONTENTS -->
+<details open="open">
+  <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
+
+* [Introduction](#Introduction)
+* [Project Video](#Project-Video)
+* [Task 1](#task-1)
+* [Task 2](#task-2)
+* [Task 3](#task-3)
+* [Reflections](#Reflections)
+* [Contacts](#contacts)
+
+
+## Introduction
+
+
+## Task 1
+Scenario 1
 
 3000ppl, time limit: 1 week, max: 12/week, time cost: medium, fuel: \$0.76/kg
 
@@ -59,6 +99,11 @@ A330: 2500/300=9 flights
 A350: 2500/350=8 flights
 
 A321: $$( 0 . 9 5 54 8 3 . 2 2 5 + 1 0 8 3 . 2 2 5 + 1 8 0 0 ) 1 3 = \$ 8 9 7 2 2 . 0 0 2 5$$
+
+
+## Task 3
+
+
 
 A330: $$( 0 . 9 5 84 8 3 . 2 2 5 + 1 5 8 3 . 2 2 5 + 2 0 0 0 ) 9 = \$ 8 9 0 0 7 . 5 7$$
 
