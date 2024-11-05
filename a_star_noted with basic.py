@@ -119,8 +119,8 @@ class AStarPlanner:
                 TCost = aircraft.TCostMid
             else:
                 TCost = aircraft.TCostHi
-            cost = scenario.FCost*aircraft.FComp*current.cost + TCost*current.cost + aircraft.FCost
             flightnum = math.ceil(scenario.PNum/aircraft.PCap)
+            cost = (scenario.FCost*aircraft.FComp*current.cost + TCost*current.cost + aircraft.FCost) * flightnum
             exceedlim = flightnum > scenario.MaxFlight
             return FlightStat(TCost)
 
