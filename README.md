@@ -111,6 +111,8 @@ So, A321 would be chosen.
 #### Introduction
 
 ## Aircraft Spectifications
+#### Aircraft Name: A350-800 Max
+
 #### Passenger Capacity
 - Minimum: 100
 - Maximum: 450
@@ -131,7 +133,8 @@ So, A321 would be chosen.
 - = 2500 for four-engine
 
 #### Fuel Cost
-
-
+![螢幕擷取畫面 2024-11-05 193551](https://github.com/user-attachments/assets/82a46e6b-aaa4-440a-b7c6-cab5f1d5aeda)
+- The global average jet fuel price last week fell 0.5% compared to the week before to $89.11/bbl. -> $0.655/kg
+  
 #### General Calculation Method
 
