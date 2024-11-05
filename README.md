@@ -41,71 +41,122 @@ LEUNG tsz hei
 
 
 ## Task 1
-### Scenario 1
+### Discription
+-
+### General Calculation Method
 
-3000ppl, time limit: 1 week, max: 12/week, time cost: medium, fuel: \$0.76/kg
+## Scenario 1
+- **Passengers**: 3000 people
+- **Time Limit**: 1 week
+- **Maximum Flights**: 12 per week
+- **Time Cost**: Medium
+- **Fuel Cost**: $0.76/kg
 
-A321: 3000/200=15 flights \> 12, rejected
+### Flight Calculations (By Manual)
 
-A330: 3000/300=10 flights
+- **A321**: 
+  - Flights needed:  $3000/200$ = 15  flights
+  - Result: Rejected (exceeds 12 flights/week)
 
-A350: 3000/350=9 flights
+- **A330**: 
+  - Flights needed: $3000/300$ = 10  flights
 
-Trip Cost:
+- **A350**: 
+  - Flights needed: $3000/350$ = 9  flights
 
-A330: $$( 0 . 7 6 84 8 3 . 2 2 5 + 2 1 8 3 . 2 2 5 + 2 0 0 0 ) 10 = \$ 9 0 6 0 8 . 0 9$$
+### Trip Cost
 
-A350: $$( 0 . 7 6 90 8 3 . 2 2 5 + 2 7 8 3 . 2 2 5 + 2 5 0 0 ) 9 = \$ 9 3 9 5 6 . 9 8 5$$
+- **A330**: 
+  
+  ($0.76 \times 8483.225$ + 2183.225 + 2000) $\times 10$ = $90,608.09
+  
 
-$$test$$
+- **A350**: 
+  
+  ($0.76 \times 9083.225$ + 2783.225 + 2500) $\times 9$ = $93,956.99
+  
 
-***
+**Conclusion**: *A330-900 Neo* is chosen.
 
-So, A330 would be chosen.
+---
 
-***
+## Scenario 2
 
-Scenario 2
+- **Passengers**: 1250 people
+- **Time Limit**: 1 month
+- **Maximum Flights**: 5 per week
+- **Time Cost**: High
+- **Fuel Cost**: $0.88/kg
 
-1250ppl, time limit: 1 month, max:5/week, time cost: high, fuel:\$0.88/kg
+### Flight Calculations (By Manual)
 
-A321: 1250/200=7 flights
+- **A321**: 
+  - Flights needed:  $1250/200$ = 7  flights
 
-A330: 1250/300=5 flights
+- **A330**: 
+  - Flights needed:  $1250/300$  = 5  flights
 
-A350: 1250/350=4 flights
+- **A350**: 
+  - Flights needed: $1250/350$ = 4  flights
 
-Cost:
+### Cost
 
-A321: $$( 0 . 8 8 54 8 3 . 2 2 5 + 2 0 8 3 . 2 2 5 + 1 8 0 0 ) 7 = \$ 5 1 9 3 5 . 4 6 4$$
+- **A321**: 
+  
+  ($0.88 \times 5483.225$ + 2083.225 + 1800) $\times 7$ = $51,935.46
+  
 
-A330: $$( 0 . 8 8 84 8 3 . 2 2 5 + 2 7 8 3 . 2 2 5 + 2 0 0 0 ) 5 = \$ 5 1 9 9 5 . 3 3 5$$
+- **A330**: 
+  
+  ($0.88 \times 8483.225$ + 2783.225 + 2000) $\times 5$ = $51,995.34
+  
 
-A350: $$( 0 . 8 8 90 8 3 . 2 2 5 + 3 4 8 3 . 2 2 5 + 2 5 0 0 ) 4 = \$ 4 7 6 8 4 . 2 8$$
+- **A350**: 
+  
+  ($0.88 \times 9083.225$ + 3483.225 + 2500) $\times 4$ = $47,684.28
+  
 
-***
+**Conclusion**: *A350-900* is chosen.
 
-So, A350 would be chosen.
+---
 
-***
+## Scenario 3
 
-Scenario 3
+- **Passengers**: 2500 people
+- **Time Limit**: 1 week
+- **Maximum Flights**: 25 per week
+- **Time Cost**: Low
+- **Fuel Cost**: $0.95/kg
 
-2500ppl, time limit: 1week, max: 25/week, time cost: low, fuel: \$0.95/kg
+### Flight Calculations (By Manual)
 
-A321: 2500/200=13 flights
+- **A321**: 
+  - Flights needed: $2500/200$ = 13  flights
 
-A330: 2500/300=9 flights
+- **A330**: 
+  - Flights needed: $2500/300$ = 9  flights
 
-A350: 2500/350=8 flights
+- **A350**: 
+  - Flights needed: $2500/350$ = 8  flights
 
-A321: $$( 0 . 9 5 54 8 3 . 2 2 5 + 1 0 8 3 . 2 2 5 + 1 8 0 0 ) 1 3 = \$ 8 9 7 2 2 . 0 0 2 5$$
+### Cost
 
-A330: $$( 0 . 9 5 84 8 3 . 2 2 5 + 1 5 8 3 . 2 2 5 + 2 0 0 0 ) 9 = \$ 8 9 0 0 7 . 5 7$$
+- **A321**: 
+  
+  ($0.95 \times 5483.225$ + 1083.225 + 1800) $\times 13$ = $89,722.00
+  
 
-A350: $$( 0 . 9 5 90 8 3 . 2 2 5 + 2 0 8 3 . 2 2 5 + 2 5 0 0 ) 8 = \$ 9 0 2 4 1 . 9$$
+- **A330**: 
+  
+  ($0.95 \times 8483.225$ + 1583.225 + 2000) $\times 9$ = $89,007.57
+  
 
-So, A321 would be chosen.
+- **A350**: 
+  
+  ($0.95 \times 9083.225$ + 2083.225 + 2500) $\times 8$ = $90,241.90
+  
+
+**Conclusion**: *A321 Neo* is chosen.
 
 
 
@@ -143,6 +194,7 @@ In this task, the new aircraft will be designed to achieve minimum cost for [sce
 #### General Calculation Method
   <h3 align="center"> Trip Cost=CT×Best Cruise Time+Total Fuel Cost+CC </h3>
 
+
 ## Our calculation
 | **Passenger Capacity** | **Time cost**| **Fixed cost** | **Engines** | **Fuel consumption** | **Flights needed** | **Cost per flight** | **Scenario 1 cost** | **Exceeds Flight Limit** |
 | ------------------ | --------- | ---------- | ------- | ---------------- | -------------- | --------------- | --------------- | --------------------- |
@@ -155,7 +207,13 @@ In this task, the new aircraft will be designed to achieve minimum cost for [sce
 | 400                | 28        | 2500       | 4       | 80               | 8              | 9888.16         | 73514.24        | no                    |
 | 450                | 30        | 2500       | 4       | 80               | 7              | 10054.56        | 65489.76        | no                    |
 
-###Result: The minimum flight cost is $65489.76 ;with 450 passenger capacity; 4 engines configuration
-- The design of 100-200 passenger capacity is not suitable because it exceed the flight limit for 12 flight per week maximum.
-- The overall result shows that use a four-engine configuration for capacities over 300 can maximize the number of passengers per flight, minimize the number of flights and balancing costs.
 
+### Result: The minimum flight cost is $65489.76 ;with 450 passenger capacity; 4 engines configuration
+ - The design of 100-200 passenger capacity is not suitable because it exceed the flight limit for 12 flight per week maximum.
+ - The overall result shows that use a four-engine configuration for capacities over 300 can maximize the number of passengers per flight, minimize the number of flights and balancing costs.
+ - 
+
+![Scenario 1 cost based on passenger capacity ](https://github.com/user-attachments/assets/29622e57-1527-43fa-9ad3-6ef5c77e6d90)
+
+
+# Reflections
