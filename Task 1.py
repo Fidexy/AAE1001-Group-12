@@ -33,6 +33,7 @@ S3 = Scenario(0.95, 2500, 1, 25)
 
 class Aircraft: # define aircraft models
     def __init__(self, name, FComp, PCap, TCostLow, TCostMid, TCostHi, FixedCost):
+        self.name = name
         self.FComp = FComp
         self.PCap = PCap
         self.TCostLow = TCostLow
@@ -40,7 +41,7 @@ class Aircraft: # define aircraft models
         self.TCostHi = TCostHi
         self.FixedCost = FixedCost
     def __str__(self):
-            return str (name) + "," + str(self.FComp) + "," + str(self.PCap) + "," + str(self.TCostLow) + "," + str(self.TCostMid) + "," + str(self.TCostHi)
+            return str(self.name) + "," + str(self.FComp) + "," + str(self.PCap) + "," + str(self.TCostLow) + "," + str(self.TCostMid) + "," + str(self.TCostHi)
 A321Neo = Aircraft("A321 Neo", 54, 200, 10, 15, 20, 1800)
 A330 = Aircraft("A330-900 Neo", 84, 300, 15, 21, 27, 2000)
 A350 = Aircraft("A350-900", 90, 250, 20, 27, 34, 2500) 
@@ -118,15 +119,16 @@ class AStarPlanner:
                 TCost = aircraft.TCostHi
             name = aircraft.name
             flightnum = math.ceil(scenario.PNum/aircraft.PCap)
-            perFcost = scenario.FCost*aircraft.FComp*current.cost + TCost*current.cost + aircraft.FCost
+            perFcost = scenario.FCost*aircraft.FComp*current.cost + TCost*current.cost + aircraft.FixedCost
             cost = perFcost * flightnum
             exceedlim = flightnum > scenario.MaxFlight
-            statement1 = "Per flight cost with ", name, ": ", perFcost, ", total cost: ", cost
-            statement2 = "This plan would require ", flightnum, "flights"
+            statement1 = f"Per flight cost with {name}: {perFcost}, total cost: {cost}"
+            statement2 = f"This plan would require {flightnum} flights"
             if exceedlim == True:
-                statement3 = ", which exceeds the flight limit of the scenario" 
+                statement3 = ", which exceeds the flight limit of the scenario"
+            else:
+                statement3 = "" 
             print(statement1)
-            print()
             print(statement2, statement3)
 
         
@@ -166,36 +168,24 @@ class AStarPlanner:
                 print("Total trip time required -> ",current.cost )
                 goal_node.parent_index = current.parent_index
                 goal_node.cost = current.cost
-                print("Scenario 1:")
-                print("Per flight cost with A321 Neo-> ")
-                print("Per flight cost with A330-900 Neo-> ")
-                print("Per flight cost with A350-900-> ")
-                if (math.ceil(S1.PNum/A321Neo.PCap)>S1.MaxFlight):
-                    print("A321 Neo cannot be used for this scenario as the maximum number of flights will be exceeded")
-                if (math.ceil(S1.PNum/A330.PCap)>S1.MaxFlight):
-                    print("A330-900 Neo cannot be used for this scenario as the maximum number of flights will be exceeded")
-                if (math.ceil(S1.PNum/A350.PCap)>S1.MaxFlight):
-                    print("A350-900 cannot be used for this scenario as the maximum number of flights will be exceeded")
-                print("Scenario 2")
-                print("Per flight cost with A321 Neo-> " )
-                print("Per flight cost with A330-900 Neo-> ")
-                print("Per flight cost with A350-900-> ")
-                if (math.ceil(S2.PNum/A321Neo.PCap)>S2.MaxFlight):
-                    print("A321 Neo cannot be used for this scenario as the maximum number of flights will be exceeded")
-                if (math.ceil(S2.PNum/A330.PCap)>S2.MaxFlight):
-                    print("A330-900 Neo cannot be used for this scenario as the maximum number of flights will be exceeded")
-                if (math.ceil(S2.PNum/A350.PCap)>S2.MaxFlight):
-                    print("A350-900 cannot be used for this scenario as the maximum number of flights will be exceeded")
-                print("Scenario 3:")
-                print("Per flight cost with A321 Neo-> ", )
-                print("Per flight cost with A330-900 Neo-> ")
-                print("Per flight cost with A350-900-> ")
-                if (math.ceil(S3.PNum/A321Neo.PCap)>S3.MaxFlight):
-                    print("A321 Neo cannot be used for this scenario as the maximum number of flights will be exceeded")
-                if (math.ceil(S3.PNum/A350.PCap)>S3.MaxFlight):
-                    print("A330-900 Neo cannot be used for this scenario as the maximum number of flights will be exceeded")
-                if (math.ceil(S3.PNum/A350.PCap)>S3.MaxFlight):
-                    print("A350-900 cannot be used for this scenario as the maximum number of flights will be exceeded")
+                for i in range (1,4):
+                    if i == 1:
+                        Scenario = S1
+                        print("Scenario 1")
+                    elif i == 2:
+                        Scenario = S2
+                        print("Scenario 2")
+                    else:
+                        Scenario = S3
+                        print("Scenario 3")
+                    for j in range (1,4):
+                        if j == 1:
+                            Aircraft = A321Neo
+                        elif j == 2:
+                            Aircraft = A330
+                        else:
+                            Aircraft = A350
+                        flight(Scenario, Aircraft)                        
                 break
 #S.FCost*FComp*current.cost+TCost*current.cost+FCost
             # Remove the item from the open set
