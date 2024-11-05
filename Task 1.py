@@ -32,7 +32,7 @@ S2 = Scenario(0.88, 1250, 3, 25)
 S3 = Scenario(0.95, 2500, 1, 25)           
 
 class Aircraft: # define aircraft models
-    def __init__(self, FComp, PCap, TCostLow, TCostMid, TCostHi, FixedCost):
+    def __init__(self, name, FComp, PCap, TCostLow, TCostMid, TCostHi, FixedCost):
         self.FComp = FComp
         self.PCap = PCap
         self.TCostLow = TCostLow
@@ -40,10 +40,10 @@ class Aircraft: # define aircraft models
         self.TCostHi = TCostHi
         self.FixedCost = FixedCost
     def __str__(self):
-            return str(self.FComp) + "," + str(self.PCap) + "," + str(self.TCostLow) + "," + str(self.TCostMid) + "," + str(self.TCostHi)
-A321Neo = Aircraft(54, 200, 10, 15, 20, 1800)
-A330 = Aircraft(84, 300, 15, 21, 27, 2000)
-A350 = Aircraft(90, 250, 20, 27, 34, 2500) 
+            return str (name) + "," + str(self.FComp) + "," + str(self.PCap) + "," + str(self.TCostLow) + "," + str(self.TCostMid) + "," + str(self.TCostHi)
+A321Neo = Aircraft("A321 Neo", 54, 200, 10, 15, 20, 1800)
+A330 = Aircraft("A330-900 Neo", 84, 300, 15, 21, 27, 2000)
+A350 = Aircraft("A350-900", 90, 250, 20, 27, 34, 2500) 
 
 class AStarPlanner:
 
@@ -116,10 +116,18 @@ class AStarPlanner:
                 TCost = aircraft.TCostMid
             else:
                 TCost = aircraft.TCostHi
+            name = aircraft.name
             flightnum = math.ceil(scenario.PNum/aircraft.PCap)
-            cost = (scenario.FCost*aircraft.FComp*current.cost + TCost*current.cost + aircraft.FCost) * flightnum
+            perFcost = scenario.FCost*aircraft.FComp*current.cost + TCost*current.cost + aircraft.FCost
+            cost = perFcost * flightnum
             exceedlim = flightnum > scenario.MaxFlight
-            return FlightStat(TCost)
+            statement1 = "Per flight cost with ", name, ": ", perFcost, ", total cost: ", cost
+            statement2 = "This plan would require ", flightnum, "flights"
+            if exceedlim == True:
+                statement3 = ", which exceeds the flight limit of the scenario" 
+            print(statement1)
+            print()
+            print(statement2, statement3)
 
         
         start_node = self.Node(self.calc_xy_index(sx, self.min_x), # calculate the index based on given position

@@ -74,9 +74,9 @@ class AStarPlanner:
         self.js_y = js_y
         
 
-        self.Delta_C1 = 0.2 # cost intensive area 1 modifier
-        self.Delta_C2 = 1 # cost intensive area 2 modifier
-        self.Delta_C3 = 1 #jetstream
+        self.Delta_C1 = 0.3 # cost intensive area 1 modifier
+        self.Delta_C2 = 0.15 # cost intensive area 2 modifier
+        self.Delta_C3 = 0.05 #jetstream
 
         self.costPerGrid = 1 
 
