@@ -17,7 +17,7 @@ import math
 
 import matplotlib.pyplot as plt
 
-show_animation = True
+show_animation = False
 
 class Scenario:
     def __init__(self, FCost, Pnum, TCostFactor, MaxFlight):
@@ -44,6 +44,8 @@ class Aircraft: # define aircraft models
 A321Neo = Aircraft(54, 200, 10, 15, 20, 1800)
 A330 = Aircraft(84, 300, 15, 21, 27, 2000)
 A350 = Aircraft(90, 250, 20, 27, 34, 2500) 
+
+global_cost = 0
 
 class AStarPlanner:
 
@@ -107,6 +109,7 @@ class AStarPlanner:
             rx: x position list of the final path
             ry: y position list of the final path
         """
+        global global_cost
         class FlightStat:
             def __init__(self, cost, overcap, exceedlim):
                 self.cost = cost
@@ -161,38 +164,8 @@ class AStarPlanner:
                 print("Total trip time required -> ",current.cost )
                 goal_node.parent_index = current.parent_index
                 goal_node.cost = current.cost
-                print("Scenario 1:")
-                print("Per flight cost with A321 Neo-> ")
-                print("Per flight cost with A330-900 Neo-> ")
-                print("Per flight cost with A350-900-> ")
-                if (math.ceil(S1.PNum/A321Neo.PCap)>S1.MaxFlight):
-                    print("A321 Neo cannot be used for this scenario as the maximum number of flights will be exceeded")
-                if (math.ceil(S1.PNum/A330.PCap)>S1.MaxFlight):
-                    print("A330-900 Neo cannot be used for this scenario as the maximum number of flights will be exceeded")
-                if (math.ceil(S1.PNum/A350.PCap)>S1.MaxFlight):
-                    print("A350-900 cannot be used for this scenario as the maximum number of flights will be exceeded")
-                print("Scenario 2")
-                print("Per flight cost with A321 Neo-> " )
-                print("Per flight cost with A330-900 Neo-> ")
-                print("Per flight cost with A350-900-> ")
-                if (math.ceil(S2.PNum/A321Neo.PCap)>S2.MaxFlight):
-                    print("A321 Neo cannot be used for this scenario as the maximum number of flights will be exceeded")
-                if (math.ceil(S2.PNum/A330.PCap)>S2.MaxFlight):
-                    print("A330-900 Neo cannot be used for this scenario as the maximum number of flights will be exceeded")
-                if (math.ceil(S2.PNum/A350.PCap)>S2.MaxFlight):
-                    print("A350-900 cannot be used for this scenario as the maximum number of flights will be exceeded")
-                print("Scenario 3:")
-                print("Per flight cost with A321 Neo-> ", )
-                print("Per flight cost with A330-900 Neo-> ")
-                print("Per flight cost with A350-900-> ")
-                if (math.ceil(S3.PNum/A321Neo.PCap)>S3.MaxFlight):
-                    print("A321 Neo cannot be used for this scenario as the maximum number of flights will be exceeded")
-                if (math.ceil(S3.PNum/A350.PCap)>S3.MaxFlight):
-                    print("A330-900 Neo cannot be used for this scenario as the maximum number of flights will be exceeded")
-                if (math.ceil(S3.PNum/A350.PCap)>S3.MaxFlight):
-                    print("A350-900 cannot be used for this scenario as the maximum number of flights will be exceeded")
+                global_cost = current.cost
                 break
-#S.FCost*FComp*current.cost+TCost*current.cost+FCost
             # Remove the item from the open set
             del open_set[c_id]
 
@@ -316,16 +289,19 @@ class AStarPlanner:
         self.min_y = round(min(oy))
         self.max_x = round(max(ox))
         self.max_y = round(max(oy))
+        '''
         print("min_x:", self.min_x)
         print("min_y:", self.min_y)
         print("max_x:", self.max_x)
         print("max_y:", self.max_y)
+        '''
 
         self.x_width = round((self.max_x - self.min_x) / self.resolution)
         self.y_width = round((self.max_y - self.min_y) / self.resolution)
+        '''
         print("x_width:", self.x_width)
         print("y_width:", self.y_width)
-
+        '''
         # obstacle map generation
         self.obstacle_map = [[False for _ in range(self.y_width)]
                              for _ in range(self.x_width)] # allocate memory
@@ -428,14 +404,19 @@ def main():
         for j in range(15,25):
             fc_x.append(i)
             fc_y.append(j)
-
-    # set Jetstream area
-    
-    js_x, js_y = [], []
-    for i in range(-10, 60):
-        for j in range(40, 45):
-            js_x.append(i)
-            js_y.append(j)
+    jetstream_list = []
+    # loops Jetstream area from bottom to top and prints result
+    for k in range(-10, 55):        
+        js_x, js_y = [], []
+        for i in range(-10, 60):
+            for j in range(k, k+5):
+                js_x.append(i)
+                js_y.append(j)
+        a_star = AStarPlanner(ox, oy, grid_size, robot_radius, fc_x, fc_y, tc_x, tc_y, js_x, js_y)
+        print(global_cost)
+        show_animation = True
+        rx, ry = a_star.planning(sx, sy, gx, gy)
+        
 
     if show_animation:  # pragma: no cover
         plt.plot(ox, oy, ".k") # plot the obstacle
@@ -449,8 +430,8 @@ def main():
         plt.grid(True) # plot the grid to the plot panel
         plt.axis("equal") # set the same resolution for x and y axis 
 
-    a_star = AStarPlanner(ox, oy, grid_size, robot_radius, fc_x, fc_y, tc_x, tc_y, js_x, js_y)
-    rx, ry = a_star.planning(sx, sy, gx, gy)
+    # a_star = AStarPlanner(ox, oy, grid_size, robot_radius, fc_x, fc_y, tc_x, tc_y, js_x, js_y)
+    # rx, ry = a_star.planning(sx, sy, gx, gy)
 
     if show_animation:  # pragma: no cover
         plt.plot(rx, ry, "-r") # show the route 
