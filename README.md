@@ -109,6 +109,7 @@ So, A321 would be chosen.
 
 # Task 3
 #### Introduction
+In this task, the new aircraft will be designed to achieve minimum cost for scenario 1 in task 1. Different type of prototype aircarft will be compared through the excel and the explanation will be mentioned below.
 
 ## Aircraft Spectifications
 #### Aircraft Name: A350-800 Max
