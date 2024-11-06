@@ -1,6 +1,6 @@
 　<p align="center">
 
-  <h3 align="center">PolyU AAE1001 GitHub Project Group12 </h3>
+  <h3 align="center">PolyU AAE1001 GitHub Project Group 12 </h3>
   
 # Members name
 
@@ -42,12 +42,15 @@ LEUNG tsz hei
 ## Introduction
 Nowadays, the cost of flight is a very important factor to decide upon profitability and competitive pricing besides operational efficiency for an airline company. Fuel and maintenance are two major key items of expenses in airline operations, which account for the price of tickets and planning of routes. Airlines have to consider their operation costs, range, capacity, and technology when they choose aircraft Moreover, market trends and passenger preferences too lead to deciding upon the type of aircraft selected. Thus, it is clear that, by properly managing the cost of flights and making prudent choices in aircraft, airlines can optimize their operations and maximize profitability in order to meet this demand. In this project, path planning can be used to find the shortest and most obstacle-free path from a start to goal state. We are going to modify and utilize the A* algorithm to facilitate the shortest path which is the lowest flight cost for different scenario.
 
+#### The Programme Path:
+<img src="https://github.com/user-attachments/assets/e800c87a-83fb-4ab7-a524-1daaf3ae7748" alt="螢幕擷取畫面 2024-11-06 231752" width="700" height="350">
+
 ## Task 1
 ### Discription
 - Here are the three scenario, the total cost are affected by shortest distance, cost intensive area, aircraft fuel and time cost from different aircraft model. The best aircraft model will be chosen through the calculation and programming.
 
 ### General Calculation Method
-![螢幕擷取畫面 2024-11-06 000040](https://github.com/user-attachments/assets/ae80c7c5-0781-4657-a360-592e238de6a4)
+　<p align="center"> <img src="https://github.com/user-attachments/assets/ae80c7c5-0781-4657-a360-592e238de6a4" alt="螢幕擷取畫面 2024-11-06 000040" width="500" height="150">
 
 ## Scenario 1
 - **Passengers**: 3000 people
