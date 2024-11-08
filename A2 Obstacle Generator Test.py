@@ -1,11 +1,18 @@
 import random
 import matplotlib.pyplot as plt
+import math
 
 def main():
-    sx = 59  # [m]
-    sy = 0.0  # [m]
-    gx = 0   # [m]
-    gy = 50  # [m]
+    while True:
+        sx = random.randint(-9,59)  # [m]
+        sy = random.randint(-9,59)  # [m]
+        gx = random.randint(-9,59)   # [m]
+        gy = random.randint(-9,59)  # [m]
+
+        distance = math.sqrt((gx - sx)**2 + (gy - sy)**2)
+
+        if distance >= 40:
+            break
 
     ox, oy = [], []
     for i in range(-10, 60): # draw the button border 
