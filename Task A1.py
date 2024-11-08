@@ -291,7 +291,7 @@ def main():
     sx = 59  # [m]
     sy = 0.0  # [m]
     c1x = 40 
-    c1y = 30
+    c1y = 20
     c2x = 0
     c2y = 0
     gx = 0   # [m]
