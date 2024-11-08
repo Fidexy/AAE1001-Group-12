@@ -23,7 +23,7 @@ global_cost = 0
 
 class AStarPlanner:
 
-    def __init__(self, ox, oy, resolution, rr, fc_x, fc_y, tc_x, tc_y):
+    def __init__(self, ox, oy, resolution, rr, fc_x, fc_y):
         """
         Initialize grid map for a star planning
 
@@ -44,8 +44,8 @@ class AStarPlanner:
 
         self.fc_x = fc_x
         self.fc_y = fc_y
-        self.tc_x = tc_x
-        self.tc_y = tc_y
+        # self.tc_x = tc_x
+        # self.tc_y = tc_y
         
 
         self.Delta_C1 = 0.3 # cost intensive area 1 modifier
@@ -139,13 +139,13 @@ class AStarPlanner:
                 node = self.Node(current.x + self.motion[i][0],
                                  current.y + self.motion[i][1],
                                  current.cost + self.motion[i][2] * self.costPerGrid, c_id)
-                
+                '''
                 ## add more cost in cost intensive area 1
                 if self.calc_grid_position(node.x, self.min_x) in self.tc_x:
                     if self.calc_grid_position(node.y, self.min_y) in self.tc_y:
                         # print("cost intensive area!!")
                         node.cost = node.cost + self.Delta_C1 * self.motion[i][2]
-                
+                '''
                 # add more cost in cost intensive area 2
                 if self.calc_grid_position(node.x, self.min_x) in self.fc_x:
                     if self.calc_grid_position(node.y, self.min_y) in self.fc_y:
@@ -291,12 +291,6 @@ def main():
     # start and goal position
     sx = 59  # [m]
     sy = 0.0  # [m]
-    '''
-    c1x = 
-    c1y = 
-    c2x = 
-    c2y = 
-    '''
     gx = 0   # [m]
     gy = 50  # [m]
     grid_size = 1  # [m]
@@ -326,45 +320,33 @@ def main():
 
     # set obstacle positions for group 9
     ox, oy = [], []
-    for i in range(-10, 60): # draw the button border 
+    for i in range(0, 40): # draw the button border 
         ox.append(i)
-        oy.append(-10.0)
-    for i in range(-10, 60): # draw the right border
-        ox.append(60.0)
+        oy.append(0)
+    for i in range(0, 40): # draw the right border
+        ox.append(40)
         oy.append(i)
-    for i in range(-10, 60): # draw the top border
+    for i in range(0, 40): # draw the top border
         ox.append(i)
-        oy.append(60.0)
-    for i in range(-10, 60): # draw the left border
-        ox.append(-10.0)
+        oy.append(40)
+    for i in range(0, 40): # draw the left border
+        ox.append(0)
         oy.append(i)
-
-    for i in range(5, 25): # draw the free border
-        ox.append(20.0)
-        oy.append(i)
-
-    for i in range(10, 20):
-        ox.append(i)
-        oy.append(-1 * i + 60)
-    
-    for j in range(40, 50): # draw the free border 
-         ox.append(j)
-         oy.append(-2 * j + 130)
-
-
+    '''
     # set cost intesive area 1
     tc_x, tc_y = [], []
     for i in range(0, 5):
         for j in range(0, 30):
             tc_x.append(i)
             tc_y.append(j)
-    
+    '''
     # set cost intesive area 2
     fc_x, fc_y = [], []
     for i in range(30, 50):
         for j in range(15,25):
             fc_x.append(i)
             fc_y.append(j)
+
 
         
 
@@ -374,12 +356,12 @@ def main():
         plt.plot(gx, gy, "xb") # plot the end position
         
         plt.plot(fc_x, fc_y, "oy") # plot the cost intensive area 1
-        plt.plot(tc_x, tc_y, "or") # plot the cost intensive area 2
+        # plt.plot(tc_x, tc_y, "or") # plot the cost intensive area 2
 
         plt.grid(True) # plot the grid to the plot panel
         plt.axis("equal") # set the same resolution for x and y axis 
 
-    a_star = AStarPlanner(ox, oy, grid_size, robot_radius, fc_x, fc_y, tc_x, tc_y)
+    a_star = AStarPlanner(ox, oy, grid_size, robot_radius, fc_x, fc_y)
     rx, ry = a_star.planning(sx, sy, gx, gy)
 
     if show_animation:  # pragma: no cover
