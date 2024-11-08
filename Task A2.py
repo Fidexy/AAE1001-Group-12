@@ -289,36 +289,20 @@ def main():
     print(__file__ + " start the A star algorithm demo !!") # print simple notes
 
     # start and goal position
-    sx = 59  # [m]
-    sy = 0.0  # [m]
-    gx = 0   # [m]
-    gy = 50  # [m]
+    while True:
+        sx = random.randint(-9,59)  # [m]
+        sy = random.randint(-9,59)  # [m]
+        gx = random.randint(-9,59)   # [m]
+        gy = random.randint(-9,59)  # [m]
+
+        distance = math.sqrt((gx - sx)**2 + (gy - sy)**2)
+
+        if distance >= 40:
+            break
     grid_size = 1  # [m]
     robot_radius = 1.0  # [m]
 
-    # set obstacle positions for group 8
-    # ox, oy = [], []
-    # for i in range(-10, 60): # draw the button border 
-    #     ox.append(i)
-    #     oy.append(-10.0)
-    # for i in range(-10, 60):
-    #     ox.append(60.0)
-    #     oy.append(i)
-    # for i in range(-10, 61):
-    #     ox.append(i)
-    #     oy.append(60.0)
-    # for i in range(-10, 61):
-    #     ox.append(-10.0)
-    #     oy.append(i)
-    # for i in range(-10, 40):
-    #     ox.append(20.0)
-    #     oy.append(i)
-    # for i in range(0, 40):
-    #     ox.append(40.0)
-    #     oy.append(60.0 - i)
-
-
-    # set obstacle positions for group 9
+    # set obstacle positions
     ox, oy = [], []
     for i in range(-10, 60): # draw the button border 
         ox.append(i)
