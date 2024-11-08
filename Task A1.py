@@ -19,26 +19,6 @@ import matplotlib.pyplot as plt
 
 show_animation = True
 
-class Scenario:
-    def __init__(self, FCost, Pnum, TCostFactor, MaxFlight):
-        self.FCost = FCost
-        self.PNum = Pnum
-        self.TCostFactor = TCostFactor  
-        self.MaxFlight = MaxFlight      
-    def __str__(self):
-        return str(self.FCost) + "," + str(self.PNum) + "," + str(self.TCostFactor) + "," + str(self.MaxFlight)
-S1 = Scenario(0.76, 3000, 2, 12)
-S2 = Scenario(0.88, 1250, 3, 25)
-S3 = Scenario(0.95, 2500, 1, 25)           
-
-class Aircraft: # define aircraft models
-    def __init__(self, FComp, PCap, TCostLow, TCostMid, TCostHi, FixedCost):
-        self.FComp = FComp
-        self.PCap = PCap
-        self.TCostLow = TCostLow
-        self.TCostMid = TCostMid
-        self.TCostHi = TCostHi
-        self.FixedCost = FixedCost
     def __str__(self):
             return str(self.FComp) + "," + str(self.PCap) + "," + str(self.TCostLow) + "," + str(self.TCostMid) + "," + str(self.TCostHi)
 A321Neo = Aircraft(54, 200, 10, 15, 20, 1800)
