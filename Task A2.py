@@ -320,17 +320,17 @@ def main():
 
     # set obstacle positions for group 9
     ox, oy = [], []
-    for i in range(0, 40): # draw the button border 
+    for i in range(-10, 60): # draw the button border 
         ox.append(i)
-        oy.append(0)
-    for i in range(0, 40): # draw the right border
-        ox.append(40)
+        oy.append(-10.0)
+    for i in range(-10, 60): # draw the right border
+        ox.append(60.0)
         oy.append(i)
-    for i in range(0, 40): # draw the top border
+    for i in range(-10, 60): # draw the top border
         ox.append(i)
-        oy.append(40)
-    for i in range(0, 40): # draw the left border
-        ox.append(0)
+        oy.append(60.0)
+    for i in range(-10, 60): # draw the left border
+        ox.append(-10.0)
         oy.append(i)
     '''
     # set cost intesive area 1
