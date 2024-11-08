@@ -14,7 +14,7 @@ This is the simple code for path planning class
 
 
 import math
-
+import random
 import matplotlib.pyplot as plt
 
 show_animation = True
@@ -342,8 +342,10 @@ def main():
     '''
     # set cost intesive area 2
     fc_x, fc_y = [], []
-    for i in range(30, 50):
-        for j in range(15,25):
+    randx = random.randint(-9, 20)
+    randy = random.randint(-9,20)
+    for i in range(randx, randx + 20):
+        for j in range(randy, randy + 20):
             fc_x.append(i)
             fc_y.append(j)
 
