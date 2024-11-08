@@ -317,10 +317,12 @@ def main():
     # start and goal position
     sx = 59  # [m]
     sy = 0.0  # [m]
+    '''
     c1x = 
     c1y = 
     c2x = 
     c2y = 
+    '''
     gx = 0   # [m]
     gy = 50  # [m]
     grid_size = 1  # [m]
@@ -404,7 +406,7 @@ def main():
         plt.axis("equal") # set the same resolution for x and y axis 
 
     a_star = AStarPlanner(ox, oy, grid_size, robot_radius, fc_x, fc_y, tc_x, tc_y)
-    rx, ry = a_star.planning(sx, sy,./.. gx, gy)
+    rx, ry = a_star.planning(sx, sy, gx, gy)
 
     if show_animation:  # pragma: no cover
         plt.plot(rx, ry, "-r") # show the route 
