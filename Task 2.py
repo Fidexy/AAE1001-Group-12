@@ -110,22 +110,6 @@ class AStarPlanner:
             ry: y position list of the final path
         """
         global global_cost
-        class FlightStat:
-            def __init__(self, cost, overcap, exceedlim):
-                self.cost = cost
-                self.overcap = overcap
-        
-        def flight(scenario, aircraft):
-            if scenario.TCostFactor == 1:
-                TCost = aircraft.TCostLow
-            elif scenario.TCostFactor == 2:
-                TCost = aircraft.TCostMid
-            else:
-                TCost = aircraft.TCostHi
-            flightnum = math.ceil(scenario.PNum/aircraft.PCap)
-            cost = (scenario.FCost*aircraft.FComp*current.cost + TCost*current.cost + aircraft.FCost) * flightnum
-            exceedlim = flightnum > scenario.MaxFlight
-            return FlightStat(TCost)
 
         
         start_node = self.Node(self.calc_xy_index(sx, self.min_x), # calculate the index based on given position
@@ -161,7 +145,7 @@ class AStarPlanner:
 
             # reaching goal
             if current.x == goal_node.x and current.y == goal_node.y:
-                print("Total trip time required -> ",current.cost )
+                # print("Total trip time required -> ",current.cost )
                 goal_node.parent_index = current.parent_index
                 goal_node.cost = current.cost
                 global_cost = current.cost
@@ -406,16 +390,35 @@ def main():
             fc_y.append(j)
     jetstream_list = []
     # loops Jetstream area from bottom to top and prints result
-    for k in range(-10, 55):        
+    for k in range(-11, 55):        
         js_x, js_y = [], []
         for i in range(-10, 60):
             for j in range(k, k+5):
                 js_x.append(i)
                 js_y.append(j)
         a_star = AStarPlanner(ox, oy, grid_size, robot_radius, fc_x, fc_y, tc_x, tc_y, js_x, js_y)
-        print(global_cost)
-        show_animation = True
         rx, ry = a_star.planning(sx, sy, gx, gy)
+        # print(global_cost)      
+        jetstream_list.append((k, global_cost))
+
+    # Search through the array to obtain the optimal vales
+    lowest = 9999999999
+    for i in range(1, 66):
+        if jetstream_list[i][1] < lowest:
+            lowest = jetstream_list[i][1]
+            index = jetstream_list[i][0]
+        # print(index, lowest)
+
+    js_x, js_y = [], []
+    for i in range(-10, 60):
+        for j in range(index, index+5):
+            js_x.append(i)
+            js_y.append(j)        
+    show_animation = True
+    a_star = AStarPlanner(ox, oy, grid_size, robot_radius, fc_x, fc_y, tc_x, tc_y, js_x, js_y)
+    rx, ry = a_star.planning(sx, sy, gx, gy)
+    print("Optimal jetstream position: ", index, "-", index+5)
+    print("Time: ", lowest)
         
 
     if show_animation:  # pragma: no cover
