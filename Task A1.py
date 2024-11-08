@@ -19,12 +19,6 @@ import matplotlib.pyplot as plt
 
 show_animation = True
 
-    def __str__(self):
-            return str(self.FComp) + "," + str(self.PCap) + "," + str(self.TCostLow) + "," + str(self.TCostMid) + "," + str(self.TCostHi)
-A321Neo = Aircraft(54, 200, 10, 15, 20, 1800)
-A330 = Aircraft(84, 300, 15, 21, 27, 2000)
-A350 = Aircraft(90, 250, 20, 27, 34, 2500) 
-
 global_cost = 0
 
 class AStarPlanner:
@@ -56,7 +50,6 @@ class AStarPlanner:
 
         self.Delta_C1 = 0.3 # cost intensive area 1 modifier
         self.Delta_C2 = 0.15 # cost intensive area 2 modifier
-        self.Delta_C3 = 0.05 #jetstream
 
         self.costPerGrid = 1 
 
@@ -297,12 +290,10 @@ def main():
     # start and goal position
     sx = 59  # [m]
     sy = 0.0  # [m]
-    '''
-    c1x = 
-    c1y = 
-    c2x = 
-    c2y = 
-    '''
+    c1x = 40 
+    c1y = 30
+    c2x = 0
+    c2y = 0
     gx = 0   # [m]
     gy = 50  # [m]
     grid_size = 1  # [m]
@@ -378,6 +369,8 @@ def main():
         plt.plot(ox, oy, ".k") # plot the obstacle
         plt.plot(sx, sy, "og") # plot the start position 
         plt.plot(gx, gy, "xb") # plot the end position
+        plt.plot(c1x, c1y, "oc") # plot checkpoint 1
+        plt.plot(c2x, c2y, "om") # plot checkpoint 2
         
         plt.plot(fc_x, fc_y, "oy") # plot the cost intensive area 1
         plt.plot(tc_x, tc_y, "or") # plot the cost intensive area 2
@@ -386,11 +379,21 @@ def main():
         plt.axis("equal") # set the same resolution for x and y axis 
 
     a_star = AStarPlanner(ox, oy, grid_size, robot_radius, fc_x, fc_y, tc_x, tc_y)
-    rx, ry = a_star.planning(sx, sy, gx, gy)
+
+    # Plan path from start to checkpoint 1
+    rx1, ry1 = a_star.planning(sx, sy, c1x, c1y)
+    # Plan path from checkpoint 1 to checkpoint 2
+    rx2, ry2 = a_star.planning(c1x, c1y, c2x, c2y)
+    # Plan path from checkpoint 2 to goal
+    rx3, ry3 = a_star.planning(c2x, c2y, gx, gy)
 
     if show_animation:  # pragma: no cover
-        plt.plot(rx, ry, "-r") # show the route 
+        plt.plot(rx1, ry1, "-r") # show the route 
         plt.pause(0.001) # pause 0.001 seconds
+        plt.plot(rx2, ry2, "-r")
+        plt.pause(0.001)
+        plt.plot(rx3, ry3, "-r")
+        plt.pause(0.001)
         plt.show() # show the plot
 
 
