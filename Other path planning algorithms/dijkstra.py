@@ -212,7 +212,7 @@ def main():
 
     # start and goal position
 
-	sx = 59  # [m]
+    sx = 59  # [m]
     sy = 0.0  # [m]
     gx = 0   # [m]
     gy = 50  # [m]

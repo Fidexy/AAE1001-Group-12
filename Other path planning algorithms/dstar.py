@@ -209,44 +209,76 @@ def AddNewObstacle(map:Map):
         plt.plot(ox, oy, ".g")
 
 def main():
-    m = Map(100, 100)
+    sx = 59  # [m]
+    sy = 0.0  # [m]
+    gx = 0   # [m]
+    gy = 50  # [m]
+    grid_size = 1  # [m]
+    robot_radius = 1.0  # [m]
+
+    # set obstacle positions for group 9
     ox, oy = [], []
-    for i in range(-10, 60):
+    for i in range(-10, 60): # draw the button border 
         ox.append(i)
-        oy.append(-10)
-    for i in range(-10, 60):
-        ox.append(60)
+        oy.append(-10.0)
+    for i in range(-10, 60): # draw the right border
+        ox.append(60.0)
         oy.append(i)
-    for i in range(-10, 61):
+    for i in range(-10, 60): # draw the top border
         ox.append(i)
-        oy.append(60)
-    for i in range(-10, 61):
-        ox.append(-10)
+        oy.append(60.0)
+    for i in range(-10, 60): # draw the left border
+        ox.append(-10.0)
         oy.append(i)
-    for i in range(-10, 40):
-        ox.append(20)
+
+    for i in range(5, 25): # draw the free border
+        ox.append(20.0)
         oy.append(i)
-    for i in range(0, 40):
-        ox.append(40)
-        oy.append(60 - i)
-    m.set_obstacle([(i, j) for i, j in zip(ox, oy)])
 
-    start = [10, 10]
-    goal = [50, 50]
-    if show_animation:
-        plt.plot(ox, oy, ".k")
-        plt.plot(start[0], start[1], "og")
-        plt.plot(goal[0], goal[1], "xb")
-        plt.axis("equal")
+    for i in range(10, 20):
+        ox.append(i)
+        oy.append(-1 * i + 60)
+    
+    for j in range(40, 50): # draw the free border 
+         ox.append(j)
+         oy.append(-2 * j + 130)
 
-    start = m.map[start[0]][start[1]]
-    end = m.map[goal[0]][goal[1]]
-    dstar = Dstar(m)
-    rx, ry = dstar.run(start, end)
 
-    if show_animation:
-        plt.plot(rx, ry, "-r")
-        plt.show()
+    # set cost intesive area 1
+    tc_x, tc_y = [], []
+    for i in range(0, 5):
+        for j in range(0, 30):
+            tc_x.append(i)
+            tc_y.append(j)
+    
+    # set cost intesive area 2
+    fc_x, fc_y = [], []
+    for i in range(30, 50):
+        for j in range(15,25):
+            fc_x.append(i)
+            fc_y.append(j)
+
+
+
+    if show_animation:  # pragma: no cover
+        plt.plot(ox, oy, ".k") # plot the obstacle
+        plt.plot(sx, sy, "og") # plot the start position 
+        plt.plot(gx, gy, "xb") # plot the end position
+        
+        plt.plot(fc_x, fc_y, "oy") # plot the cost intensive area 1
+        plt.plot(tc_x, tc_y, "or") # plot the cost intensive area 2
+
+        plt.grid(True) # plot the grid to the plot panel
+        plt.axis("equal") # set the same resolution for x and y axis 
+
+    d_star = Dstar(ox, oy, grid_size, robot_radius, fc_x, fc_y, tc_x, tc_y)
+    rx, ry = d_star.planning(sx, sy, gx, gy)
+
+    if show_animation:  # pragma: no cover
+        plt.plot(rx, ry, "-r") # show the route 
+        plt.pause(0.001) # pause 0.001 seconds
+        plt.show() # show the plot
+
 
 
 if __name__ == '__main__':
