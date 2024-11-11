@@ -50,7 +50,17 @@ Nowadays, the cost of flight is a very important factor to decide upon profitabi
 - Here are the three scenario, the total cost are affected by shortest distance, cost intensive area, aircraft fuel and time cost from different aircraft model. The best aircraft model will be chosen through the calculation and programming.
 
 ### General Calculation Method
-　<p align="center"> <img src="https://github.com/user-attachments/assets/ae80c7c5-0781-4657-a360-592e238de6a4" alt="螢幕擷取畫面 2024-11-06 000040" width="500" height="150">
+C = C<sub>F</sub>  ⋅ ΔF ⋅ ΔT + C<sub>T</sub> ⋅ T<sub>best</sub> + C<sub>C</sub>
+
+C<sub>F</sub> = cost of fuel per kg
+
+C<sub>T</sub> = time related cost per minute of flight
+
+C<sub>C</sub> = fixed cost independent of time
+
+ΔF = rate of fuel consumption
+
+ΔT = trip time
 
 ## Scenario 1
 - **Passengers**: 3000 people
@@ -208,7 +218,17 @@ In this task, the new aircraft will be designed to achieve minimum cost for [sce
 - The global average jet fuel price last week fell 0.5% compared to the week before to $88.26/bbl. -> $0.649/kg (Asia)
   
 #### General Calculation Method
-  <h3 align="center"> Trip Cost=CT×Best Cruise Time+Total Fuel Cost+CC </h3>
+C = C<sub>F</sub>  ⋅ ΔF ⋅ ΔT + C<sub>T</sub> ⋅ T<sub>best</sub> + C<sub>C</sub>
+
+C<sub>F</sub> = cost of fuel per kg
+
+C<sub>T</sub> = time related cost per minute of flight
+
+C<sub>C</sub> = fixed cost independent of time
+
+ΔF = rate of fuel consumption
+
+ΔT = trip time
 
 
 ## Our calculation
