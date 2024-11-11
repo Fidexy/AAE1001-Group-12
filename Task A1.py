@@ -120,10 +120,10 @@ class AStarPlanner:
 
             # reaching goal
             if current.x == goal_node.x and current.y == goal_node.y:
-                print("Total trip time required -> ",current.cost )
+                # print("Total trip time required -> ",current.cost )
                 goal_node.parent_index = current.parent_index
                 goal_node.cost = current.cost
-                global_cost = current.cost
+                global_cost = current.cost + global_cost
                 break
             # Remove the item from the open set
             del open_set[c_id]
@@ -366,6 +366,7 @@ def main():
     rx2, ry2 = a_star.planning(c1x, c1y, c2x, c2y)
     # Plan path from checkpoint 2 to goal
     rx3, ry3 = a_star.planning(c2x, c2y, gx, gy)
+    print("Total trip time required -> ", global_cost )
 
     if show_animation:  # pragma: no cover
         plt.plot(rx1, ry1, "-r") # show the route 
