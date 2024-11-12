@@ -292,16 +292,13 @@ def main():
     sy = 0.0  # [m]
     c1x = 40 
     c1y = 20
-    c2x = 0
-    c2y = 0
+    c2x = 2
+    c2y = 2
     gx = 0   # [m]
     gy = 50  # [m]
     grid_size = 1  # [m]
     robot_radius = 1.0  # [m]
 
-
-
-    # set obstacle positions for group 9
     ox, oy = [], []
     for i in range(-10, 60): # draw the button border 
         ox.append(i)
@@ -349,11 +346,13 @@ def main():
         plt.plot(ox, oy, ".k") # plot the obstacle
         plt.plot(sx, sy, "og") # plot the start position 
         plt.plot(gx, gy, "xb") # plot the end position
-        plt.plot(c1x, c1y, "oc") # plot checkpoint 1
-        plt.plot(c2x, c2y, "om") # plot checkpoint 2
-        
+                
         plt.plot(fc_x, fc_y, "oy") # plot the cost intensive area 1
         plt.plot(tc_x, tc_y, "or") # plot the cost intensive area 2
+
+        plt.plot(c1x, c1y, "oc") # plot checkpoint 1
+        plt.plot(c2x, c2y, "om") # plot checkpoint 2
+
 
         plt.grid(True) # plot the grid to the plot panel
         plt.axis("equal") # set the same resolution for x and y axis 
@@ -376,6 +375,7 @@ def main():
         plt.plot(rx3, ry3, "-r")
         plt.pause(0.001)
         plt.show() # show the plot
+
 
 
 if __name__ == '__main__':
