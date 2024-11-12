@@ -34,9 +34,9 @@ Li Bowen
 * [Task 1 (Bonus)](#task-1-bonus)
 * [Task 2](#task-2)
 * [Task 3](#task-3)
-* [Additional Task 1](#Additional Task 1)
-* [Additional Task 2](#Additional Task 2)
-* [Additional Task 3](#Additional Task 3)
+* [Additional Task 1](#Additional-Task-1)
+* [Additional Task 2](#Additional-Task-2)
+* [Additional Task 3](#Additional-Task-3)
 * [Reflections](#reflections)
 * [Contacts](#contacts)
 
