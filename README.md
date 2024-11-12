@@ -203,7 +203,15 @@ C<sub>C</sub> = fixed cost independent of time
 Set up a minus-cost area which spans across the map laterally and 5 units vertically and determine the optimal placement of the minus-cost area
 ### Setting up the jetstream
 ### Calculating optimal placement
-### Result
+### Result:
+<img src="https://github.com/user-attachments/assets/c5586965-5167-41e5-abef-99858ce7604e" alt="![image]" width="300" height="250">
+
+
+<img src="https://github.com/user-attachments/assets/c0219a52-c966-486a-9796-cd136775812d" alt="![螢幕擷取畫面 2024-11-12 180408]" width="450" height="50">
+
+
+-From the result, the programme code found out that the optimal jet stream position is 13-18 and the flight time is 80.17991693419718
+
 
 
 # Task 3
