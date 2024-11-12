@@ -90,6 +90,7 @@ class Dijkstra:
                 print("Find goal")
                 goal_node.parent_index = current.parent_index
                 goal_node.cost = current.cost
+                print("Trip cost (dijkstra) -> ",current.cost )
                 break
 
             # Remove the item from the open set
@@ -104,6 +105,7 @@ class Dijkstra:
                                  current.y + move_y,
                                  current.cost + move_cost, c_id)
                 n_id = self.calc_index(node)
+                
 
                 if n_id in closed_set:
                     continue

@@ -1,10 +1,10 @@
 """
 
-Depth-First grid planning
+Breadth-First grid planning
 
 author: Erwin Lejeune (@spida_rwin)
 
-See Wikipedia article (https://en.wikipedia.org/wiki/Depth-first_search)
+See Wikipedia article (https://en.wikipedia.org/wiki/Breadth-first_search)
 
 """
 
@@ -15,11 +15,11 @@ import matplotlib.pyplot as plt
 show_animation = True
 
 
-class DepthFirstSearchPlanner:
+class BreadthFirstSearchPlanner:
 
     def __init__(self, ox, oy, reso, rr):
         """
-        Initialize grid map for Depth-First planning
+        Initialize grid map for bfs planning
 
         ox: x position list of Obstacles [m]
         oy: y position list of Obstacles [m]
@@ -46,7 +46,7 @@ class DepthFirstSearchPlanner:
 
     def planning(self, sx, sy, gx, gy):
         """
-        Depth First search
+        Breadth First search based planning
 
         input:
             s_x: start x position [m]
@@ -72,8 +72,11 @@ class DepthFirstSearchPlanner:
                 print("Open set is empty..")
                 break
 
-            current = open_set.pop(list(open_set.keys())[-1])
+            current = open_set.pop(list(open_set.keys())[0])
+
             c_id = self.calc_grid_index(current)
+
+            closed_set[c_id] = current
 
             # show graph
             if show_animation:  # pragma: no cover
@@ -84,12 +87,14 @@ class DepthFirstSearchPlanner:
                                              lambda event:
                                              [exit(0) if event.key == 'escape'
                                               else None])
-                plt.pause(0.01)
+                if len(closed_set.keys()) % 10 == 0:
+                    plt.pause(0.001)
 
             if current.x == ngoal.x and current.y == ngoal.y:
                 print("Find goal")
                 ngoal.parent_index = current.parent_index
                 ngoal.cost = current.cost
+                print("Trip cost (breadth first search) -> ",current.cost )
                 break
 
             # expand_grid search grid based on motion model
@@ -103,10 +108,9 @@ class DepthFirstSearchPlanner:
                 if not self.verify_node(node):
                     continue
 
-                if n_id not in closed_set:
-                    open_set[n_id] = node
-                    closed_set[n_id] = node
+                if (n_id not in closed_set) and (n_id not in open_set):
                     node.parent = current
+                    open_set[n_id] = node
 
         rx, ry = self.calc_final_path(ngoal, closed_set)
         return rx, ry
@@ -207,14 +211,16 @@ def main():
     print(__file__ + " start!!")
 
     # start and goal position
-	sx = 59  # [m]
+    sx = 59  # [m]
     sy = 0.0  # [m]
     gx = 0   # [m]
     gy = 50  # [m]
     grid_size = 1  # [m]
     robot_radius = 1.0  # [m]
+
+    # set obstacle positions for group 9
     ox, oy = [], []
-    for i in range(-10, 60): # draw the bottom border 
+    for i in range(-10, 60): # draw the button border 
         ox.append(i)
         oy.append(-10.0)
     for i in range(-10, 60): # draw the right border
@@ -226,12 +232,15 @@ def main():
     for i in range(-10, 60): # draw the left border
         ox.append(-10.0)
         oy.append(i)
+
     for i in range(5, 25): # draw the free border
         ox.append(20.0)
         oy.append(i)
+
     for i in range(10, 20):
         ox.append(i)
-        oy.append(-1 * i + 60)    
+        oy.append(-1 * i + 60)
+    
     for j in range(40, 50): # draw the free border 
          ox.append(j)
          oy.append(-2 * j + 130)
@@ -243,8 +252,8 @@ def main():
         plt.grid(True)
         plt.axis("equal")
 
-    dfs = DepthFirstSearchPlanner(ox, oy, grid_size, robot_radius)
-    rx, ry = dfs.planning(sx, sy, gx, gy)
+    bfs = BreadthFirstSearchPlanner(ox, oy, grid_size, robot_radius)
+    rx, ry = bfs.planning(sx, sy, gx, gy)
 
     if show_animation:  # pragma: no cover
         plt.plot(rx, ry, "-r")
