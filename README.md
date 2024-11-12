@@ -11,16 +11,16 @@ AU bai qiao
 LEUNG tsz hei
 
 **Member 2:** 
-
+Sun Jiajun
 
 **Member 3:**
-
+Xiong jianyu
 
 **Member 4:**
-
+LIU wingyin
 
 **Member 5:**
-
+Li Bowen
 
 **Member 6:**
 
