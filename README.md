@@ -286,6 +286,7 @@ C<sub>C</sub> = fixed cost independent of time
 ![Scenario 1 cost based on passenger capacity ](https://github.com/user-attachments/assets/29622e57-1527-43fa-9ad3-6ef5c77e6d90)
 
 # Additional Task 1
+![螢幕擷取畫面 2024-11-12 181654](https://github.com/user-attachments/assets/9086f4ed-517e-4268-a327-07ff9d656b17)
 # Additional Task 2
 # Additional Task 3
 
