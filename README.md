@@ -194,11 +194,17 @@ C<sub>C</sub> = fixed cost independent of time
 ## Task 1 (Bonus) 
 ![螢幕擷取畫面 2024-11-12 171955](https://github.com/user-attachments/assets/af45789b-7aec-4fa2-ae12-95b782f0026f)
 
+## Task 2
+### Jetstream
+### Introduction
+Set up a minus-cost area which spans across the map laterally and 5 units vertically and determine the optimal placement of the minus-cost area
+### Setting up the jetstream
+### Calculating optimal placement
 
 
 # Task 3
 #### Introduction
-In this task, the new aircraft will be designed to achieve minimum cost for [scenario 1](#Scenario-1) in task 1. Different type of aircarft design will be compared through the table and the explanation will be mentioned below. Currently, the airline sometimes use different aircraft for the same route of flight during peak seaon in order to maximize the profit. 
+In this task, the new aircraft will be designed to achieve minimum cost for [scenario 1](#Scenario-1) in task 1. Different aircraft designs will be compared through the table and the explanation will be mentioned below. Currently, the airline sometimes use different aircraft for the same route of flight during peak seaon in order to maximize the profit. 
 
 ## Scenario 1
 - **Passengers**: 3000 people
