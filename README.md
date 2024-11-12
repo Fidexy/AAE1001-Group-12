@@ -34,7 +34,9 @@ Li Bowen
 * [Task 1 (Bonus)](#task-1-bonus)
 * [Task 2](#task-2)
 * [Task 3](#task-3)
-* [Task 4](#task-4)
+* [Additional Task 1](#Additional Task 1)
+* [Additional Task 2](#Additional Task 2)
+* [Additional Task 3](#Additional Task 3)
 * [Reflections](#reflections)
 * [Contacts](#contacts)
 
@@ -46,8 +48,8 @@ Nowadays, the cost of flight is a very important factor to decide upon profitabi
 <img src="https://github.com/user-attachments/assets/e800c87a-83fb-4ab7-a524-1daaf3ae7748" alt="螢幕擷取畫面 2024-11-06 231752" width="700" height="350">
 
 ## Task 1
-### Discription
-- Here are the three scenario, the total cost are affected by shortest distance, cost intensive area, aircraft fuel and time cost from different aircraft model. The best aircraft model will be chosen through the calculation and programming.
+### Description
+Choose the best aircraft model for each scenario by evaluating the cost required to complete the scenario.
 
 ### General Calculation Method
 C = C<sub>F</sub>  ⋅ ΔF ⋅ ΔT + C<sub>T</sub> ⋅ T<sub>best</sub> + C<sub>C</sub>
@@ -251,5 +253,8 @@ C<sub>C</sub> = fixed cost independent of time
 
 ![Scenario 1 cost based on passenger capacity ](https://github.com/user-attachments/assets/29622e57-1527-43fa-9ad3-6ef5c77e6d90)
 
+# Additional Task 1
+# Additional Task 2
+# Additional Task 3
 
 # Reflections
