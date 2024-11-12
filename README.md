@@ -203,6 +203,7 @@ C<sub>C</sub> = fixed cost independent of time
 Set up a minus-cost area which spans across the map laterally and 5 units vertically and determine the optimal placement of the minus-cost area
 ### Setting up the jetstream
 ### Calculating optimal placement
+### Result
 
 
 # Task 3
