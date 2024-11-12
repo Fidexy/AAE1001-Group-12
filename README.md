@@ -192,9 +192,10 @@ C<sub>C</sub> = fixed cost independent of time
 ***
 
 ## Calculation with code 
-![螢幕擷取畫面 2024-11-12 171955](https://github.com/user-attachments/assets/af45789b-7aec-4fa2-ae12-95b782f0026f)
 ### Setting constants
 ### Cost function
+### Outputs
+![螢幕擷取畫面 2024-11-12 171955](https://github.com/user-attachments/assets/af45789b-7aec-4fa2-ae12-95b782f0026f)
 
 ## Task 2
 ### Jetstream
