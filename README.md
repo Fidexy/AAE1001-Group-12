@@ -50,7 +50,7 @@ Nowadays, the cost of flight is a very important factor to decide upon profitabi
 ### Path planning
 <img src="https://github.com/user-attachments/assets/e8b2fbbd-10c8-47fe-8ad6-8ac94439c068" alt="![Figure_1]" width="450" height="350">
 
-#### How the border and cost area move? 
+#### Adjusting the obstacles
 By changing the value in the range ( -10,60 ) which provide from the power point ,the border will move to our designated coordinate.  For the cost intensive area, the coordinate can be move by adjusting the i/j range ( X,Y ). Therefore, the shortest flight time (83.225 mins) will be generated through A* algorithm
 
 Here are our code:
@@ -191,8 +191,10 @@ C<sub>C</sub> = fixed cost independent of time
 
 ***
 
-## Task 1 (Bonus) 
+## Calculation with code 
 ![螢幕擷取畫面 2024-11-12 171955](https://github.com/user-attachments/assets/af45789b-7aec-4fa2-ae12-95b782f0026f)
+### Setting constants
+### Cost function
 
 ## Task 2
 ### Jetstream
