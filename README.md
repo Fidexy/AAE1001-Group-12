@@ -47,6 +47,10 @@ Nowadays, the cost of flight is a very important factor to decide upon profitabi
 #### The Programme Path:
 <img src="https://github.com/user-attachments/assets/e800c87a-83fb-4ab7-a524-1daaf3ae7748" alt="螢幕擷取畫面 2024-11-06 231752" width="700" height="350">
 
+### Path planning
+<img src="https://github.com/user-attachments/assets/e8b2fbbd-10c8-47fe-8ad6-8ac94439c068" alt="![Figure_1]" width="450" height="350">
+
+#### How the border move
 ## Task 1
 ### Description
 Choose the best aircraft model for each scenario by evaluating the cost required to complete the scenario.
