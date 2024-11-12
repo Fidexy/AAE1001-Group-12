@@ -50,7 +50,7 @@ Nowadays, the cost of flight is a very important factor to decide upon profitabi
 ### Path planning
 <img src="https://github.com/user-attachments/assets/e8b2fbbd-10c8-47fe-8ad6-8ac94439c068" alt="![Figure_1]" width="450" height="350">
 
-#### How the border move
+#### How the border move? 
 ## Task 1
 ### Description
 Choose the best aircraft model for each scenario by evaluating the cost required to complete the scenario.
@@ -184,6 +184,8 @@ C<sub>C</sub> = fixed cost independent of time
 ***
 
 ## Task 1 (Bonus) 
+![螢幕擷取畫面 2024-11-12 171955](https://github.com/user-attachments/assets/af45789b-7aec-4fa2-ae12-95b782f0026f)
+
 
 
 # Task 3
