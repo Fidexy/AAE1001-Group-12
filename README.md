@@ -287,7 +287,15 @@ C<sub>C</sub> = fixed cost independent of time
 
 # Additional Task 1
 ![螢幕擷取畫面 2024-11-12 181654](https://github.com/user-attachments/assets/9086f4ed-517e-4268-a327-07ff9d656b17)
+### Introduction
+Set up a checkpoint in each cost-intensive area, which must be passed through before reaching the checkpoint
+### Checkpoint setup
+### Modified code
 # Additional Task 2
+### Introduction
+Edit the program such that obstacles, cost-intensive area and start/end points are generated randomly
+##### Requirements
+### Modified code
 # Additional Task 3
 
 # Reflections
