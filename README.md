@@ -312,6 +312,7 @@ if scenario.TCostFactor == 1:
 ### Introduction
 Set up a minus-cost area which spans across the map laterally and 5 units vertically and determine the optimal placement of the minus-cost area
 ### Setting up the jetstream
+
 ### Calculating optimal placement
 ### Result:
 <img src="https://github.com/user-attachments/assets/c5586965-5167-41e5-abef-99858ce7604e" alt="![image]" width="300" height="250">

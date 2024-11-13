@@ -354,7 +354,7 @@ def main():
     grid_size = 1  # [m]
     robot_radius = 1.0  # [m]
 
-    # set obstacle positions for group 9
+    # set obstacle positions for group 12
     ox, oy = [], []
     for i in range(-10, 60): # draw the button border 
         ox.append(i)
