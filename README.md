@@ -312,8 +312,46 @@ if scenario.TCostFactor == 1:
 ### Introduction
 Set up a minus-cost area which spans across the map laterally and 5 units vertically and determine the optimal placement of the minus-cost area
 ### Setting up the jetstream
-
+Creating a jetstream:
+~~~python
+js_x, js_y = [], []
+    for i in range(-10, 60):
+        for j in range(index, index+5):
+            js_x.append(i)
+            js_y.append(j)
+~~~
+Removing cost in jetstream area:
+~~~python
+Delta_C3 = 0.05
+...
+if self.calc_grid_position(node.x, self.min_x) in self.js_x:
+                    if self.calc_grid_position(node.y, self.min_y) in self.js_y:
+                        # print("jetstream area!!")
+                        node.cost = node.cost - self.Delta_C3 * self.motion[i][2]
+~~~
 ### Calculating optimal placement
+This code block runs multiple iterations of the path planning algorithm, setting up the jetstream in a different area in each iteration. The resulting cost, as well as the y-value of the jetstream, is stored in an array jetstream_list. Plotting is disabled in this stage.
+~~~python
+for k in range(-11, 55):        
+        js_x, js_y = [], []
+        for i in range(-10, 60):
+            for j in range(k, k+5):
+                js_x.append(i)
+                js_y.append(j)
+        a_star = AStarPlanner(ox, oy, grid_size, robot_radius, fc_x, fc_y, tc_x, tc_y, js_x, js_y)
+        rx, ry = a_star.planning(sx, sy, gx, gy)
+        # print(global_cost)      
+        jetstream_list.append((k, global_cost))
+~~~
+A simple algorithm searches for the array item with the lowest path cost, indicating the optimal path, and obtains the y-value of the jetstream for reconstruction of the optimal path. Plotting is enabled after this function to allow the optimal path to be displayed.
+~~~python
+    lowest = 9999999999
+    for i in range(1, 66):
+        if jetstream_list[i][1] < lowest:
+            lowest = jetstream_list[i][1]
+            index = jetstream_list[i][0]
+    show_animation = True
+~~~
 ### Result:
 <img src="https://github.com/user-attachments/assets/c5586965-5167-41e5-abef-99858ce7604e" alt="![image]" width="300" height="250">
 
