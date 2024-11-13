@@ -52,12 +52,48 @@ Nowadays, the cost of flight is a very important factor to decide upon profitabi
 
 #### Adjusting the obstacles
 By changing the value in the range ( -10,60 ) which provide from the power point ,the border will move to our designated coordinate.  For the cost intensive area, the coordinate can be move by adjusting the i/j range ( X,Y ). Therefore, the shortest flight time (83.225 mins) will be generated through A* algorithm
+~~~python
+ox, oy = [], []
+    for i in range(-10, 60): # draw the button border 
+        ox.append(i)
+        oy.append(-10.0)
+    for i in range(-10, 60): # draw the right border
+        ox.append(60.0)
+        oy.append(i)
+    for i in range(-10, 60): # draw the top border
+        ox.append(i)
+        oy.append(60.0)
+    for i in range(-10, 60): # draw the left border
+        ox.append(-10.0)
+        oy.append(i)
 
-Here are our code:
+    for i in range(5, 25): # draw the free border
+        ox.append(20.0)
+        oy.append(i)
 
-<img src="https://github.com/user-attachments/assets/58ab112b-a221-4532-8bb6-ab491871fd2b" alt="![螢幕擷取畫面 2024-11-12 173334]" width="350" height="300">
+    for i in range(10, 20):
+        ox.append(i)
+        oy.append(-1 * i + 60)
+    
+    for j in range(40, 50): # draw the free border 
+         ox.append(j)
+         oy.append(-2 * j + 130)
 
-<img src="https://github.com/user-attachments/assets/eb747401-6e0f-4829-8e5b-92c78975558b" alt="![螢幕擷取畫面 2024-11-12 173312]" width="400" height="450">
+
+    # set cost intesive area 1
+    tc_x, tc_y = [], []
+    for i in range(0, 5):
+        for j in range(0, 30):
+            tc_x.append(i)
+            tc_y.append(j)
+    
+    # set cost intesive area 2
+    fc_x, fc_y = [], []
+    for i in range(30, 50):
+        for j in range(15,25):
+            fc_x.append(i)
+            fc_y.append(j)
+~~~
 
 ## Task 1
 ### Description
