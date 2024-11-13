@@ -42,7 +42,9 @@ Li Bowen
 
 
 ## Introduction
-Nowadays, the cost of flight is a very important factor to decide upon profitability and competitive pricing besides operational efficiency for an airline company. Fuel and maintenance are two major key items of expenses in airline operations, which account for the price of tickets and planning of routes. Airlines have to consider their operation costs, range, capacity, and technology when they choose aircraft Moreover, market trends and passenger preferences too lead to deciding upon the type of aircraft selected. Thus, it is clear that, by properly managing the cost of flights and making prudent choices in aircraft, airlines can optimize their operations and maximize profitability in order to meet this demand. In this project, path planning can be used to find the shortest and most obstacle-free path from a start to goal state. We are going to modify and utilize the A* algorithm to facilitate the shortest path which is the lowest flight cost for different scenario.
+With so many competing airlines, the cost of flights became critical to profitability and pricing strategies. Besides operational efficiency, fuel and maintenance make up the high costs that determine pricing and flying routes. In choosing aircraft, airlines have to consider operational cost, range, capacity, and technology characteristics, together with market trends and passenger preference. Effective flight cost management and strategic aircraft choices would eventually lead carriers to optimize operations and improve profitability.
+
+In this project, we will apply path planning in order to have a basis to obtain the shortest and best path. In this case, we enhance and apply the A* method in order to determine the low-cost flight path across different scenarios..
 
 #### The Programme Path:
 <img src="https://github.com/user-attachments/assets/e800c87a-83fb-4ab7-a524-1daaf3ae7748" alt="螢幕擷取畫面 2024-11-06 231752" width="700" height="350">
