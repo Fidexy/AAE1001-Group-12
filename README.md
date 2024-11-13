@@ -367,10 +367,34 @@ Set up a checkpoint in each cost-intensive area, which must be passed through be
 ### Introduction
 Edit the program such that obstacles, cost-intensive area and start/end points are generated randomly
 ##### Requirements
+- Obstacles should be randomly generated with a reasonable density
+- Obstacles should not generate near the start and end points
+- Remove the cost-intensive area
+- Fuel-intensive area should be 40x40 in area
+- The fuel-intensive area should not cover the plotting of the obstacles
 ### Modified code
+The code snippetshown below generates the 40x40 fuel-intensive area in a random position:
 ~~~python
-
+fc_x, fc_y = [], []
+    randx = random.randint(-9, 20)
+    randy = random.randint(-9,20)
+    for i in range(randx, randx + 40):
+        for j in range(randy, randy + 40):
+            fc_x.append(i)
+            fc_y.append(j)
 ~~~
+The code snippet shown below generates obstacles randomly
+~~~python
+for i in range(int(obstacle_density * 60 * 60)):
+  ox_temp = random.randint(-9, 59)
+  oy_temp = random.randint(-9, 59)
+  if math.sqrt((ox_temp - sx)**2 + (oy_temp - sy)**2) < obstacle_clearance or math.sqrt((ox_temp - gx)**2 + (oy_temp - gy)**2) < obstacle_clearance:
+      continue
+
+  ox.append(ox_temp)
+  oy.append(oy_temp)
+~~~
+It takes in two constants, obstacle_density and obstacle_clearance, which determine the obstacle density and area around the start/end points which should not generate obstacles, respectively. Random integers corresponding to the x and y value of the randomly generated obstacle undergoes a check to make sure they aren't within a certain proximity of the start and end points, before appending them to the arrays for the obstacle coordinates.
 # Additional Task 3
 Compare between different path finding algorithms
 # Reflections

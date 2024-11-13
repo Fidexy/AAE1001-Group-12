@@ -321,7 +321,6 @@ def main():
     obstacle_density = 0.4
     obstacle_clearance = 5
     # generate random obstacles
-    Rox, Roy = [], []
     for i in range(int(obstacle_density * 60 * 60)):
         ox_temp = random.randint(-9, 59)
         oy_temp = random.randint(-9, 59)
@@ -351,10 +350,6 @@ def main():
         plt.plot(ox, oy, ".k", zorder = 2) # plot the obstacle
         plt.plot(sx, sy, "og") # plot the start position 
         plt.plot(gx, gy, "xb") # plot the end position
-        # plt.plot(Rox, Roy, ".k")
-        
-        # plt.plot(tc_x, tc_y, "or") # plot the cost intensive area 2
-
         plt.grid(True) # plot the grid to the plot panel
         plt.axis("equal") # set the same resolution for x and y axis 
 
