@@ -341,8 +341,8 @@ def main():
     fc_x, fc_y = [], []
     randx = random.randint(-9, 20)
     randy = random.randint(-9,20)
-    for i in range(randx, randx + 20):
-        for j in range(randy, randy + 20):
+    for i in range(randx, randx + 40):
+        for j in range(randy, randy + 40):
             fc_x.append(i)
             fc_y.append(j)
 
@@ -350,7 +350,7 @@ def main():
         
 
     if show_animation:  # pragma: no cover
-        plt.plot(fc_x, fc_y, "oy") # plot the cost intensive area 1
+        plt.plot(fc_x, fc_y, "oy", zorder = 0) # plot the cost intensive area 1
         plt.plot(ox, oy, ".k", zorder = 2) # plot the obstacle
         plt.plot(sx, sy, "og") # plot the start position 
         plt.plot(gx, gy, "xb") # plot the end position
