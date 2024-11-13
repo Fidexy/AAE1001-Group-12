@@ -346,9 +346,6 @@ def main():
             fc_x.append(i)
             fc_y.append(j)
 
-
-        
-
     if show_animation:  # pragma: no cover
         plt.plot(fc_x, fc_y, "oy", zorder = 0) # plot the cost intensive area 1
         plt.plot(ox, oy, ".k", zorder = 2) # plot the obstacle
