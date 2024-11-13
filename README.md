@@ -193,8 +193,80 @@ C<sub>C</sub> = fixed cost independent of time
 
 ## Calculation with code 
 ### Setting constants
+Each scenario has the following attributes:
+
+- Fuel cost (FCost)
+- Passenger number (Pnum)
+- Time cost [low/mid/high] (TCostFactor)
+- Maximum flights (MaxFlight)
+~~~python
+class Scenario:
+    def __init__(self, FCost, Pnum, TCostFactor, MaxFlight):
+        self.FCost = FCost
+        self.PNum = Pnum
+        self.TCostFactor = TCostFactor  
+        self.MaxFlight = MaxFlight      
+    def __str__(self):
+        return str(self.FCost) + "," + str(self.PNum) + "," + str(self.TCostFactor) + "," + str(self.MaxFlight)
+S1 = Scenario(0.76, 3000, 2, 12)
+S2 = Scenario(0.88, 1250, 3, 25)
+S3 = Scenario(0.95, 2500, 1, 25)
+~~~
+Each aircraft model has the following attributes:
+- Fuel consumption rate (FComp)
+- Passenger capacity (PCap)
+- Time Cost (TCostLow/Mid/Hi)
+- Fixed Cost (FCost)
+~~~python
+class Aircraft:
+    def __init__(self, name, FComp, PCap, TCostLow, TCostMid, TCostHi, FixedCost):
+        self.name = name
+        self.FComp = FComp
+        self.PCap = PCap
+        self.TCostLow = TCostLow
+        self.TCostMid = TCostMid
+        self.TCostHi = TCostHi
+        self.FixedCost = FixedCost
+    def __str__(self):
+            return str(self.name) + "," + str(self.FComp) + "," + str(self.PCap) + "," + str(self.TCostLow) + "," + str(self.TCostMid) + "," + str(self.TCostHi)
+A321Neo = Aircraft("A321 Neo", 54, 200, 10, 15, 20, 1800)
+A330 = Aircraft("A330-900 Neo", 84, 300, 15, 21, 27, 2000)
+A350 = Aircraft("A350-900", 90, 250, 20, 27, 34, 2500) 
+~~~
+With these attributes, the cost needed to complete a scenario can be calculated
 ### Cost function
+Given that the cost equation is:
+
+C = C<sub>F</sub>  ⋅ ΔF ⋅ ΔT + C<sub>T</sub> ⋅ T<sub>best</sub> + C<sub>C</sub>
+The cost function can be made with the aforementioned variables as:
+~~~python
+  flightnum = math.ceil(scenario.PNum/aircraft.PCap)
+  perFcost = scenario.FCost*aircraft.FComp*current.cost + TCost*current.cost + aircraft.FixedCost
+  cost = perFcost * flightnum
+~~~
+Where current.cost contains the value of the flight time, flightnum calculates the number of flights needed to complete the scenario, perFcost calculates the cost per flight, and cost multiplies the two together to obtain the total cost for each scenario.
+
+An if statement is used to select the appropriate time cost based on the scenario:
+~~~python
+if scenario.TCostFactor == 1:
+      TCost = aircraft.TCostLow
+  elif scenario.TCostFactor == 2:
+      TCost = aircraft.TCostMid
+  else:
+      TCost = aircraft.TCostHi
+~~~
 ### Outputs
+~~~python
+  exceedlim = flightnum > scenario.MaxFlight
+  statement1 = f"Per flight cost with {name}: {perFcost}, total cost: {cost}"
+  statement2 = f"This plan would require {flightnum} flights"
+  if exceedlim == True:
+      statement3 = ", which exceeds the flight limit of the scenario"
+  else:
+      statement3 = "" 
+  print(statement1)
+  print(statement2, statement3)
+~~~
 ![螢幕擷取畫面 2024-11-12 171955](https://github.com/user-attachments/assets/af45789b-7aec-4fa2-ae12-95b782f0026f)
 
 ## Task 2
@@ -296,6 +368,9 @@ Set up a checkpoint in each cost-intensive area, which must be passed through be
 Edit the program such that obstacles, cost-intensive area and start/end points are generated randomly
 ##### Requirements
 ### Modified code
-# Additional Task 3
+~~~python
 
+~~~
+# Additional Task 3
+Compare between different path finding algorithms
 # Reflections
