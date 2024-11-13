@@ -439,7 +439,33 @@ C<sub>C</sub> = fixed cost independent of time
 ### Introduction
 Set up a checkpoint in each cost-intensive area, which must be passed through before reaching the checkpoint
 ### Checkpoint setup
+~~~python
+# checkpoint 1
+c1x = 40 
+c1y = 20
+# checkpoint 2
+c2x = 2
+c2y = 2
+~~~
+![image](Images\A2cp.png)
 ### Modified code
+The path planning function was called multiple times with different coordinates, and the results were stored in different arrays to be plotted separately
+~~~python
+rx1, ry1 = a_star.planning(sx, sy, c1x, c1y)
+# Plan path from checkpoint 1 to checkpoint 2
+rx2, ry2 = a_star.planning(c1x, c1y, c2x, c2y)
+# Plan path from checkpoint 2 to goal
+rx3, ry3 = a_star.planning(c2x, c2y, gx, gy)
+...
+...
+plt.plot(rx1, ry1, "-r") # show the route 
+plt.pause(0.001) # pause 0.001 seconds
+plt.plot(rx2, ry2, "-r")
+plt.pause(0.001)
+plt.plot(rx3, ry3, "-r")
+plt.pause(0.001)
+plt.show() # show the plot
+~~~
 # Additional Task 2
 ### Introduction
 Edit the program such that obstacles, cost-intensive area and start/end points are generated randomly

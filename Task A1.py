@@ -290,8 +290,10 @@ def main():
     # start and goal position
     sx = 59  # [m]
     sy = 0.0  # [m]
+    # checkpoint 1
     c1x = 40 
     c1y = 20
+    # checkpoint 2
     c2x = 2
     c2y = 2
     gx = 0   # [m]
