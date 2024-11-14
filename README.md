@@ -22,7 +22,6 @@ LIU wingyin
 **Member 5:**
 Li Bowen
 
-**Member 6:**
 
 
 <!-- TABLE OF CONTENTS -->
@@ -31,7 +30,7 @@ Li Bowen
 
 * [Introduction](#introduction)
 * [Task 1](#task-1)
-* [Task 1 (Bonus)](#task-1-bonus)
+* [Task 1 (Bonus)](#Calculation-with-code)
 * [Task 2](#task-2)
 * [Task 3](#task-3)
 * [Additional Task 1](#Additional-Task-1)
@@ -435,7 +434,8 @@ C<sub>C</sub> = fixed cost independent of time
 ![Scenario 1 cost based on passenger capacity ](https://github.com/user-attachments/assets/29622e57-1527-43fa-9ad3-6ef5c77e6d90)
 
 # Additional Task 1
-![螢幕擷取畫面 2024-11-12 181654](https://github.com/user-attachments/assets/9086f4ed-517e-4268-a327-07ff9d656b17)
+<img src="https://github.com/user-attachments/assets/9086f4ed-517e-4268-a327-07ff9d656b17" alt="![螢幕擷取畫面 2024-11-12 181654]" width="500" height="350">
+
 ### Introduction
 Set up a checkpoint in each cost-intensive area, which must be passed through before reaching the checkpoint
 ### Checkpoint setup
@@ -448,6 +448,7 @@ c2x = 2
 c2y = 2
 ~~~
 ![image](Images\A2cp.png)
+
 ### Modified code
 The path planning function was called multiple times with different coordinates, and the results were stored in different arrays to be plotted separately
 ~~~python
@@ -500,4 +501,10 @@ for i in range(int(obstacle_density * 60 * 60)):
 It takes in two constants, obstacle_density and obstacle_clearance, which determine the obstacle density and area around the start/end points which should not generate obstacles, respectively. Random integers corresponding to the x and y value of the randomly generated obstacle undergoes a check to make sure they aren't within a certain proximity of the start and end points, before appending them to the arrays for the obstacle coordinates.
 # Additional Task 3
 Compare between different path finding algorithms
+
 # Reflections
+
+Leung Tsz Hei 24082857d
+
+In this group project, I have learnt a lot of programming knowledge. I remember when I first received this assignment, I felt devastated because i have no previous knowledge on the A* algorithm. Fortunately, I had a great group of people who helped me understand the task. One of my groupmate have much more experience in coding and he taught me the meaning of the code patiently. For the work distribution, I was mainly responsible for the work on Task 3 and readme report. At the beginning, I had no idea how to edit the markdown format such as adding the heading, subheading, link and photo. After that, I watched lots of online tutorials which helped me familiarize with the typing style. I started to understand the meaning behind each markdown code. Now, I think I master the basic use of the markdown format report.
+
