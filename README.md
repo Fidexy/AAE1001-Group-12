@@ -1,3 +1,4 @@
+
 　<p align="center">
 
   <h3 align="center">PolyU AAE1001 GitHub Project Group 12 </h3>
@@ -476,7 +477,7 @@ Edit the program such that obstacles, cost-intensive area and start/end points a
 - Fuel-intensive area should be 40x40 in area
 - The fuel-intensive area should not cover the plotting of the obstacles
 ### Modified code
-The code snippetshown below generates the 40x40 fuel-intensive area in a random position:
+The code snippet shown below generates the 40x40 fuel-intensive area in a random position:
 ~~~python
 fc_x, fc_y = [], []
     randx = random.randint(-9, 20)
