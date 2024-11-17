@@ -503,11 +503,14 @@ It takes in two constants, obstacle_density and obstacle_clearance, which determ
 
 # Additional Task 3
 Compare between different path finding algorithms
-### Algorithms
-#### AStar
 #### Dijkstra
-#### Breadth-first search
 
+#### Breadth-first search
+Breadth-first search explores all neighboring nodes at the present depth before moving on to the nodes of the next depth level.
+
+Optimality: Finding the shortest path in unweighted graphs
+
+Complexity: O(V+E), where V is the number of vertices and E is the number of edges in the graph
 
 # Reflections
 
