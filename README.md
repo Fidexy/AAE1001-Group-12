@@ -500,8 +500,14 @@ for i in range(int(obstacle_density * 60 * 60)):
   oy.append(oy_temp)
 ~~~
 It takes in two constants, obstacle_density and obstacle_clearance, which determine the obstacle density and area around the start/end points which should not generate obstacles, respectively. Random integers corresponding to the x and y value of the randomly generated obstacle undergoes a check to make sure they aren't within a certain proximity of the start and end points, before appending them to the arrays for the obstacle coordinates.
+
 # Additional Task 3
 Compare between different path finding algorithms
+### Algorithms
+#### AStar
+#### Dijkstra
+#### Breadth-first search
+
 
 # Reflections
 
