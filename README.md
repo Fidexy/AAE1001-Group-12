@@ -505,6 +505,8 @@ It takes in two constants, obstacle_density and obstacle_clearance, which determ
 
 # Additional Task 3
 Compare between different path finding algorithms
+#### A*
+A* is an informed search algorithm that uses a function 𝑓(𝑛)=𝑔(𝑛)+ℎ(𝑛)f(n)=g(n)+h(n), where 𝑔(𝑛)g(n) is the actual cost from the start, and ℎ(𝑛)h(n) is the heuristic estimate to the goal. It’s efficient when the heuristic is accurate, focusing the search towards the goal.
 #### Dijkstra
 Dijkstra's algorithm find the shortest path by explore the node with the smallest known distance from the source which is similar to A*, except that A* makes use of heuristics to find the shortest parth. Dijkstra is a greedy algorithm that works on weighted graphs with non-negative edge weights, guaranteeing the shortest path by minimizing the total path cost from the source to each node.
 #### Breadth-First Search
