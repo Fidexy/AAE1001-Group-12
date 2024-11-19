@@ -506,9 +506,10 @@ It takes in two constants, obstacle_density and obstacle_clearance, which determ
 # Additional Task 3
 Compare between different path finding algorithms
 #### Dijkstra
-Dijkstra's algorithm is largely similar to A*, except that A* makes use of heuristics to find the shortest parth with Dijkstra explores every single possible path, making is less efficient than A*.
+Dijkstra's algorithm find the shortest path by explore the node with the smallest known distance from the source which is similar to A*, except that A* makes use of heuristics to find the shortest parth. Dijkstra is a greedy algorithm that works on weighted graphs with non-negative edge weights, guaranteeing the shortest path by minimizing the total path cost from the source to each node.
 #### Breadth-First Search
-Breadth-first search explores all neighboring nodes at the present depth before moving on to the nodes of the next depth level.
+Breadth-first search explores all neighboring nodes at the present depth before moving on to the nodes of the next depth level.  It uses a queue to explore nodes in order of their distance from the source which making it ideal for unweighted graphs. As a result, it guarantees the shortest path in terms of the number of edges.
+
 ### Breadth-First Search vs A*
 |              | A*                                             | Breadth-first                             |
 | :----------- | :--------------------------------------------- | :---------------------------------------- |
