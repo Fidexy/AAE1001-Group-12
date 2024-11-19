@@ -23,6 +23,8 @@ LIU wingyin
 **Member 5:**
 Li Bowen
 
+**Member 6:**
+WONG Tin Ching
 
 
 <!-- TABLE OF CONTENTS -->
