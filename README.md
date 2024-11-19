@@ -504,7 +504,7 @@ for i in range(int(obstacle_density * 60 * 60)):
 It takes in two constants, obstacle_density and obstacle_clearance, which determine the obstacle density and area around the start/end points which should not generate obstacles, respectively. Random integers corresponding to the x and y value of the randomly generated obstacle undergoes a check to make sure they aren't within a certain proximity of the start and end points, before appending them to the arrays for the obstacle coordinates.
 
 # Additional Task 3
-Compare between different path finding algorithms
+## Theories between A*, Dijkstra and Breadth-First Search
 #### A*
 A* is an informed search algorithm that uses a function 𝑓(𝑛)=𝑔(𝑛)+ℎ(𝑛)f(n)=g(n)+h(n), where 𝑔(𝑛)g(n) is the actual cost from the start, and ℎ(𝑛)h(n) is the heuristic estimate to the goal. It’s efficient when the heuristic is accurate, focusing the search towards the goal.
 #### Dijkstra
@@ -512,13 +512,79 @@ Dijkstra's algorithm find the shortest path by explore the node with the smalles
 #### Breadth-First Search
 Breadth-first search explores all neighboring nodes at the present depth before moving on to the nodes of the next depth level.  It uses a queue to explore nodes in order of their distance from the source which making it ideal for unweighted graphs. As a result, it guarantees the shortest path in terms of the number of edges.
 
-### Breadth-First Search vs A*
-|              | A*                                             | Breadth-first                             |
-| :----------- | :--------------------------------------------- | :---------------------------------------- |
-| Type         | Informed search                                | Blind search                              |
-| Optimality   | Optimal when all edge costs are identical      | Optimal if admissible heuristics are used |
-| Completeness | If the branching factor is infinite            | If the search space if finite             |
-| Usage        | Unweighted graph/cost of all edges is the same | Cost of edges differs                     |
+## Performance between A*, Dijkstra and Breadth-First Search
+#### A*
+A* performs very well when an admissible and consistent heuristic is available, guiding the search efficiently towards the goal and reducing exploration.
+For large graphs with a bad heuristic, A* can be slower and explore more nodes than Dijkstra’s.
+#### Dijkstra
+Dijkstra's is guaranteed to find the shortest path in a graph with non-negative edge weights, but it doesn't have a heuristic to guide it, meaning it may explore more nodes than necessary, especially in large graphs.
+Compared to A*, Dijkstra's tends to explore more nodes in graphs with a clear goal since it doesn’t have a heuristic to focus the search.
+#### Breadth-First Search
+BFS is optimal for unweighted graphs, where the shortest path is defined by the minimum number of edges, but it is inefficient in weighted graphs.
+BFS can explore a large number of irrelevant nodes, especially in large graphs where the goal is far from the source, making it slower than A* or Dijkstra’s in many cases.
+
+## Limitation and strength between A*, Dijkstra and Breadth-First Search
+
+### A*
+### Limitations:
+
+Heuristic-Dependent: The performance of A* depends heavily on the heuristic. A poor heuristic can lead to worse performance than Dijkstra’s or unnecessary exploration.
+
+Memory-Intensive: A* stores all potential paths and their costs in memory which can become problematic in very large graphs or maps.
+
+Complexity: Implementing A* is more complex than BFS or Dijkstra’s due to the need for a heuristic function and careful management of the priority queue.
+
+### Strengths:
+
+Efficient with a Good Heuristic: A* performs extremely well if the heuristic is a good estimate of the actual cost, focusing the search toward the goal and reducing exploration.
+
+Optimal Path: A* always finds the shortest path if the heuristic is admissible and consistent.
+
+Goal-Oriented: A* is goal-directed which mean it works particularly well in large search spaces because it prioritizes nodes that are closer to the target based on the heuristic.
+
+### Dijkstra
+
+### Limitations:
+
+Explores Many Nodes: Dijkstra’s explores all nodes based on their distance from the source, even if they are far from the goal. This can make it slower in large graphs where the goal is located far from the source.
+
+Not Goal-Oriented: Dijkstra’s algorithm is not goal directed , it does not prioritize nodes that are closer to the goal which leading to unnecessary exploration.
+
+Memory Usage: Like A*, Dijkstra’s needs to store all distances and maintain a large priority queue, which can consume significant memory in large maps.
+
+### Strengths:
+
+Always Finds the Shortest Path: In weighted pathfinding, Dijkstra’s is guaranteed to find the optimal path, regardless of the goal’s position.
+
+No Heuristic Needed: It works well without a heuristic and is easier to apply in general weighted graphs where no obvious heuristic exists.
+
+Handles All Non-Negative Weights: Dijkstra’s works for all graphs with non-negative edge weights which making it versatile for various pathfinding problems.
+
+### Breadth-First Search
+
+### Limitations:
+
+Inefficient for Weighted Graphs: BFS treats all edges equally so it cannot handle different edge weights. It is not suitable for weighted pathfinding.
+
+Blind Search: BFS explores all nodes evenly without considering the goal’s location which leading to slow performance in large graphs or maps where the goal is far from the source.
+
+Not Scalable: In large graphs, BFS can explore a vast number of irrelevant nodes before reaching the goal, making it inefficient compared to A* or Dijkstra’s in large pathfinding problems.
+
+### Strengths:
+
+Simple and Effective for Unweighted Graphs: BFS is ideal for pathfinding in unweighted grids or graphs where all edges have the same cost.
+
+Guarantees Shortest Path: In unweighted graphs, BFS guarantees the shortest path in terms of the number of steps or edges.
+
+Easy to Implement: BFS is straightforward to code and doesn’t require a heuristic or complex data structures like a priority queue.
+
+# Summary
+
+| **Algorithm**         | **Theory**                                                                                                                                      | **Strengths**                                                        | **Limitations**                                                  | **Performance**                                                  |
+|-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------|------------------------------------------------------------------|------------------------------------------------------------------|
+| **A\***               | - Uses **𝑓(𝑛) = 𝑔(𝑛) + ℎ(𝑛)**, where **𝑔(𝑛)** is the cost from start, and **ℎ(𝑛)** is a heuristic estimate to the goal. <br> - Informed and goal-directed. | - Efficient with good heuristic <br> - Goal-oriented <br> - Finds optimal path | - Heuristic-dependent <br> - Memory-intensive <br> - Complex     | - Fast with good heuristic <br> - Slower with poor heuristic     |
+| **Dijkstra**          | - Greedy algorithm exploring nodes with the smallest known distance from the source. <br> - Works on graphs with **non-negative** edge weights.  | - Always finds shortest path <br> - No heuristic needed <br> - Handles non-negative weights | - Explores irrelevant nodes <br> - Not goal-oriented <br> - Memory usage | - Explores many nodes <br> - Slower than A\* with good heuristic |
+| **Breadth-First Search** | - Explores all nodes at the current depth before moving to the next level. <br> - Ideal for **unweighted** graphs and uses a queue.            | - Simple and easy to implement <br> - Guarantees shortest path in unweighted graphs | - Inefficient for weighted graphs <br> - Blind search <br> - Not scalable | - Optimal in unweighted graphs <br> - Slow in large graphs       |
 
 # Reflections
 
