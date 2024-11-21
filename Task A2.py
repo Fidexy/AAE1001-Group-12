@@ -11,8 +11,6 @@ This is the simple code for path planning class
 
 """
 
-
-
 import math
 import random
 import matplotlib.pyplot as plt
@@ -278,10 +276,7 @@ class AStarPlanner:
                   [0, 1, 1],
                   [-1, 0, 1],
                   [0, -1, 1],
-                  [-1, -1, math.sqrt(2)],
-                  [-1, 1, math.sqrt(2)],
-                  [1, -1, math.sqrt(2)],
-                  [1, 1, math.sqrt(2)]]
+                  ]
 
         return motion
 
@@ -301,7 +296,7 @@ def main():
         if distance >= 40:
             break
     grid_size = 1  # [m]
-    robot_radius = 0.5  # [m]
+    robot_radius = 0.7  # [m]
 
     # set obstacle positions
     ox, oy = [], []
@@ -318,7 +313,7 @@ def main():
         ox.append(-10.0)
         oy.append(i)
 
-    obstacle_density = 0.4
+    obstacle_density = 0.3
     obstacle_clearance = 5
     # generate random obstacles
     for i in range(int(obstacle_density * 60 * 60)):
