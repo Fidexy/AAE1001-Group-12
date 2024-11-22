@@ -296,7 +296,7 @@ def main():
         if distance >= 40:
             break
     grid_size = 1  # [m]
-    robot_radius = 0.7  # [m]
+    robot_radius = 1  # [m]
 
     # set obstacle positions
     ox, oy = [], []
@@ -313,8 +313,8 @@ def main():
         ox.append(-10.0)
         oy.append(i)
 
-    obstacle_density = 0.3
-    obstacle_clearance = 5
+    obstacle_density = 0.14
+    obstacle_clearance = 6
     # generate random obstacles
     for i in range(int(obstacle_density * 60 * 60)):
         ox_temp = random.randint(-9, 59)
