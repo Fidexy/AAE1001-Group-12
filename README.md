@@ -508,7 +508,7 @@ It takes in two constants, obstacle_density and obstacle_clearance, which determ
 #### A*
 A* is an informed search algorithm that uses a function 𝑓(𝑛)=𝑔(𝑛)+ℎ(𝑛)f(n)=g(n)+h(n), where 𝑔(𝑛)g(n) is the actual cost from the start, and ℎ(𝑛)h(n) is the heuristic estimate to the goal. It’s efficient when the heuristic is accurate, focusing the search towards the goal.
 
-<img src="https://github.com/user-attachments/assets/1b887f6a-ac14-4e64-b527-c3e152c481a4" alt="Image Description" width="400"/>
+<img src="[https://github.com/user-attachments/assets/1b887f6a-ac14-4e64-b527-c3e152c481a4](https://github.com/user-attachments/assets/fc3819fe-2ad2-431c-a6ab-8a61c934af86)" alt="Image Description" width="400"/>
 
 #### Dijkstra
 Dijkstra's algorithm find the shortest path by explore the node with the smallest known distance from the source which is similar to A*, except that A* makes use of heuristics to find the shortest parth. Dijkstra is a greedy algorithm that works on weighted graphs with non-negative edge weights, guaranteeing the shortest path by minimizing the total path cost from the source to each node.
@@ -600,4 +600,5 @@ Easy to Implement: BFS is straightforward to code and doesn’t require a heuris
 Leung Tsz Hei 24082857d
 
 In this group project, I have learnt a lot of programming knowledge. I remember when I first received this assignment, I felt devastated because i have no previous knowledge on the A* algorithm. Fortunately, I had a great group of people who helped me understand the task. One of my groupmate have much more experience in coding and he taught me the meaning of the code patiently. For the work distribution, I was mainly responsible for the work on Task 3 and readme report. At the beginning, I had no idea how to edit the markdown format such as adding the heading, subheading, link and photo. After that, I watched lots of online tutorials which helped me familiarize with the typing style. I started to understand the meaning behind each markdown code. Now, I think I master the basic use of the markdown format report.
+
 
