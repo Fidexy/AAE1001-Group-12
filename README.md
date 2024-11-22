@@ -450,7 +450,7 @@ c1y = 20
 c2x = 2
 c2y = 2
 ~~~
-![image](Images\A2cp.png)
+![A2cp](https://github.com/user-attachments/assets/4005ba9c-1eb3-4da1-a9f4-08870ccd1ae9)
 
 ### Modified code
 The path planning function was called multiple times with different coordinates, and the results were stored in different arrays to be plotted separately
