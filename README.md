@@ -605,5 +605,6 @@ In this group project, I have learnt a lot of programming knowledge. I remember 
 
 
 Liu Wing Yin 24020287d
+
 Before starting this project, I had no knowledge of programming and felt quite nervous in this subject. However, I was fortunate to have groupmates who were skilled in programming and guided me throughout the process. Their patience and support made a huge difference in helping me understand the fundamentals. Additionally, with the assistance of AI tools, I was able to learn concepts more effectively and gain a clearer understanding of the tasks at hand. This project made me realize the growing importance of programming, especially with AI becoming a significant trend for the future. In terms of work distribution, I was mainly responsible for completing Task A3's GitHub README page and assisting with some calculations in other tasks. These responsibilities allowed me to apply what I learned and contribute meaningfully to the project. Overall, it has been a valuable experience and I believe the knowledge I gained will be highly useful in my future career.
 
