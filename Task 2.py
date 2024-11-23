@@ -16,8 +16,9 @@ This is the simple code for path planning class
 import math
 
 import matplotlib.pyplot as plt
+import matplotlib
 
-show_animation = False
+show_animation = True
 
 global_cost = 0
 
@@ -106,16 +107,6 @@ class AStarPlanner:
                                                                          o])) # g(n) and h(n): calculate the distance between the goal node and openset
             current = open_set[c_id]
 
-            # show graph
-            if show_animation:  # pragma: no cover
-                plt.plot(self.calc_grid_position(current.x, self.min_x),
-                         self.calc_grid_position(current.y, self.min_y), "xc")
-                # for stopping simulation with the esc key.
-                plt.gcf().canvas.mpl_connect('key_release_event',
-                                             lambda event: [exit(
-                                                 0) if event.key == 'escape' else None])
-                if len(closed_set.keys()) % 10 == 0:
-                    plt.pause(0.001)
 
             # reaching goal
             if current.x == goal_node.x and current.y == goal_node.y:
@@ -299,6 +290,8 @@ def main():
     grid_size = 1  # [m]
     robot_radius = 1.0  # [m]
 
+    
+
     # set obstacle positions for group 9
     ox, oy = [], []
     for i in range(-10, 60): # draw the button border 
@@ -342,6 +335,7 @@ def main():
             fc_y.append(j)
     jetstream_list = []
     # loops Jetstream area from bottom to top and prints result
+    plt.show() # show the plot
     for k in range(-11, 55):        
         js_x, js_y = [], []
         for i in range(-10, 60):
@@ -350,6 +344,20 @@ def main():
                 js_y.append(j)
         a_star = AStarPlanner(ox, oy, grid_size, robot_radius, fc_x, fc_y, tc_x, tc_y, js_x, js_y)
         rx, ry = a_star.planning(sx, sy, gx, gy)
+        plt.plot(ox, oy, ".k") # plot the obstacle
+        plt.plot(sx, sy, "og") # plot the start position 
+        plt.plot(gx, gy, "xb") # plot the end position
+        
+        plt.plot(fc_x, fc_y, "oy") # plot the cost intensive area 1
+        plt.plot(tc_x, tc_y, "or") # plot the cost intensive area 2
+        plt.plot(js_x, js_y,)
+
+        plt.grid(True) # plot the grid to the plot panel
+        plt.axis("equal") # set the same resolution for x and y axis 
+        plt.plot(rx, ry, "-r") # show the route 
+        plt.text(-5, 65, 'Cost =' + str(global_cost), fontsize = 12)
+        plt.pause(0.001) # pause 0.001 seconds
+        plt.clf()
         # print(global_cost)      
         jetstream_list.append((k, global_cost))
 
@@ -366,7 +374,6 @@ def main():
         for j in range(index, index+5):
             js_x.append(i)
             js_y.append(j)        
-    show_animation = True
     a_star = AStarPlanner(ox, oy, grid_size, robot_radius, fc_x, fc_y, tc_x, tc_y, js_x, js_y)
     rx, ry = a_star.planning(sx, sy, gx, gy)
     print("Optimal jetstream position: ", index, "-", index+5)
@@ -384,12 +391,8 @@ def main():
 
         plt.grid(True) # plot the grid to the plot panel
         plt.axis("equal") # set the same resolution for x and y axis 
-
-    # a_star = AStarPlanner(ox, oy, grid_size, robot_radius, fc_x, fc_y, tc_x, tc_y, js_x, js_y)
-    # rx, ry = a_star.planning(sx, sy, gx, gy)
-
-    if show_animation:  # pragma: no cover
         plt.plot(rx, ry, "-r") # show the route 
+        plt.text(-10, 65, 'Optimal position found, cost =' + str(lowest), fontsize = 12)
         plt.pause(0.001) # pause 0.001 seconds
         plt.show() # show the plot
 
