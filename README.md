@@ -508,19 +508,21 @@ It takes in two constants, obstacle_density and obstacle_clearance, which determ
 #### A*
 A* is an informed search algorithm that uses a function 𝑓(𝑛)=𝑔(𝑛)+ℎ(𝑛)f(n)=g(n)+h(n), where 𝑔(𝑛)g(n) is the actual cost from the start, and ℎ(𝑛)h(n) is the heuristic estimate to the goal. It’s efficient when the heuristic is accurate, focusing the search towards the goal.
 
-<img src="https://github.com/user-attachments/assets/b1a4f657-491f-46f7-bd97-823e817c3416" alt="Figure 1" width="400"/>
+![astar](https://github.com/user-attachments/assets/4e1c3ea6-9cd7-4988-84c1-05bfb3ffef30)
 
 
 #### Dijkstra
 Dijkstra's algorithm find the shortest path by explore the node with the smallest known distance from the source which is similar to A*, except that A* makes use of heuristics to find the shortest parth. Dijkstra is a greedy algorithm that works on weighted graphs with non-negative edge weights, guaranteeing the shortest path by minimizing the total path cost from the source to each node.
 
-<img src="https://github.com/user-attachments/assets/35111c8a-6a41-4940-93a3-0209f9e0c97f" alt="Figure 2" width="400"/>
+![dijk](https://github.com/user-attachments/assets/35e2b889-75aa-4311-b252-edfea20b1d31)
+
 
 
 #### Breadth-First Search
 Breadth-first search explores all neighboring nodes at the present depth before moving on to the nodes of the next depth level.  It uses a queue to explore nodes in order of their distance from the source which making it ideal for unweighted graphs. As a result, it guarantees the shortest path in terms of the number of edges.
 
-<img src="https://github.com/user-attachments/assets/1cb37fae-2456-48ed-92e1-71fa8f69b9f0" alt="Figure 3" width="400"/>
+![bfs](https://github.com/user-attachments/assets/93e89c68-20ec-482d-a057-af89746a23a5)
+
 
 
 ## Performance between A*, Dijkstra and Breadth-First Search
