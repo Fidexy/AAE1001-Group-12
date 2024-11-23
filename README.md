@@ -33,7 +33,7 @@ WONG Tin Ching
 
 * [Introduction](#introduction)
 * [Task 1](#task-1)
-* [Task 1 (Bonus)](#Calculation-with-code)
+* [Task 1 (Bonus)](#task-1b)
 * [Task 2](#task-2)
 * [Task 3](#task-3)
 * [Additional Task 1](#Additional-Task-1)
@@ -232,7 +232,7 @@ C<sub>C</sub> = fixed cost independent of time
 
 ***
 
-<h2 id="Calculation-with-code">Task 1 (Bonus)</h2>
+<h2 id="task-1b">Task 1b</h2>
 ## Calculation with code 
 ### Setting constants
 Each scenario has the following attributes:
