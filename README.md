@@ -100,6 +100,7 @@ ox, oy = [], []
 ~~~
 
 <h2 id="task-1">Task 1</h2>
+
 ## Task 1
 ### Description
 Choose the best aircraft model for each scenario by evaluating the cost required to complete the scenario.
@@ -313,6 +314,7 @@ if scenario.TCostFactor == 1:
 ![螢幕擷取畫面 2024-11-12 171955](https://github.com/user-attachments/assets/af45789b-7aec-4fa2-ae12-95b782f0026f)
 
 <h2 id="task-2">Task 2</h2>
+
 ## Task 2
 ### Jetstream
 ### Introduction
@@ -368,6 +370,7 @@ A simple algorithm searches for the array item with the lowest path cost, indica
 -From the result, the programme code found out that the optimal jet stream position is 13-18 and the flight time is 80.17991693419718
 
 <h2 id="task-3">Task 3</h2>
+
 # Task 3
 #### Introduction
 In this task, the new aircraft will be designed to achieve minimum cost for [scenario 1](#Scenario-1) in task 1. Different aircraft designs will be compared through the table and the explanation will be mentioned below. Currently, the airline sometimes use different aircraft for the same route of flight during peak seaon in order to maximize the profit. 
