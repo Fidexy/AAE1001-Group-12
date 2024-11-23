@@ -316,6 +316,7 @@ if scenario.TCostFactor == 1:
 
 
 ### Jetstream
+A jet stream is a narrow band of strong wind found in the atmosphere of some planets, including Earth. Jet streams are westerly winds that occur near the tropopause on Earth. Their pathways can be up to thoudsands of kilometres long, but only a few hundred kilometres wide and a few kilometres.
 ### Introduction
 Set up a minus-cost area which spans across the map laterally and 5 units vertically and determine the optimal placement of the minus-cost area
 ### Setting up the jetstream
