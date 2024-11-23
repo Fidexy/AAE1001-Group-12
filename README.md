@@ -232,7 +232,8 @@ C<sub>C</sub> = fixed cost independent of time
 
 ***
 
-<h2 id="task-1b">Task 1b</h2>
+<h2 id="task-1b">Task 1 (Bonus)</h2>
+
 ## Calculation with code 
 ### Setting constants
 Each scenario has the following attributes:
