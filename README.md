@@ -59,6 +59,7 @@ WONG Tin Ching
     </ol>
 </details>
 
+<a id="Introduction"></a>
 ## [Introduction]
 With so many competing airlines, the cost of flights became critical to profitability and pricing strategies. Besides operational efficiency, fuel and maintenance make up the high costs that determine pricing and flying routes. In choosing aircraft, airlines have to consider operational cost, range, capacity, and technology characteristics, together with market trends and passenger preference. Effective flight cost management and strategic aircraft choices would eventually lead carriers to optimize operations and improve profitability.
 
