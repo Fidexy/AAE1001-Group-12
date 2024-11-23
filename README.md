@@ -41,23 +41,6 @@ WONG Tin Ching
 * [Additional Task 3](#Additional-Task-3)
 * [Reflections](#reflections)
 * [Contacts](#contacts)
-  
-<!-- TABLE OF CONTENTS -->
-<details open="open">
-  <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
-    <ol>
-      <li><a href="#Introduction">Introduction<a/></li>
-      <li><a href="#Task 1">Task 1<a/></li>
-      <li><a href="#Task 1 (Bonus)">Calculation-with-code</a></li>
-      <li><a href="#Task 2">Task 2<a/></li>
-      <li><a href="#Task 3">Task 3<a/></li>
-      <li><a href="#Additional Task 1">Additional Task 1<a/></li>
-      <li><a href="#Additional Task 2">Additional Task 2<a/></li>
-      <li><a href="#Additional Task 3">Additional Task 3<a/></li>
-      <li><a href="#Reflections">Reflections<a/></li>
-      <li><a href="#Contacts">Contacts<a/></li>
-    </ol>
-</details>
 
 <h2 id="introduction">Introduction</h2>
 ## Introduction
