@@ -101,7 +101,6 @@ ox, oy = [], []
 
 <h2 id="task-1">Task 1</h2>
 
-## Task 1
 ### Description
 Choose the best aircraft model for each scenario by evaluating the cost required to complete the scenario.
 
@@ -315,7 +314,7 @@ if scenario.TCostFactor == 1:
 
 <h2 id="task-2">Task 2</h2>
 
-## Task 2
+
 ### Jetstream
 ### Introduction
 Set up a minus-cost area which spans across the map laterally and 5 units vertically and determine the optimal placement of the minus-cost area
@@ -371,7 +370,7 @@ A simple algorithm searches for the array item with the lowest path cost, indica
 
 <h2 id="task-3">Task 3</h2>
 
-# Task 3
+
 #### Introduction
 In this task, the new aircraft will be designed to achieve minimum cost for [scenario 1](#Scenario-1) in task 1. Different aircraft designs will be compared through the table and the explanation will be mentioned below. Currently, the airline sometimes use different aircraft for the same route of flight during peak seaon in order to maximize the profit. 
 
@@ -478,7 +477,7 @@ plt.pause(0.001)
 plt.show() # show the plot
 ~~~
 <h2 id="additional-task-2">Additional Task 2</h2>
-# Additional Task 2
+
 ### Introduction
 Edit the program such that obstacles, cost-intensive area and start/end points are generated randomly
 ##### Requirements
@@ -514,14 +513,14 @@ for i in range(int(obstacle_density * 60 * 60)):
 It takes in two constants, obstacle_density and obstacle_clearance, which determine the obstacle density and area around the start/end points which should not generate obstacles, respectively. Random integers corresponding to the x and y value of the randomly generated obstacle undergoes a check to make sure they aren't within a certain proximity of the start and end points, before appending them to the arrays for the obstacle coordinates.
 
 <h2 id="additional-task-3">Additional Task 3</h2>
-# Additional Task 3
+
 ## Theories between A*, Dijkstra and Breadth-First Search
 #### A*
 A* is an informed search algorithm that uses a function 𝑓(𝑛)=𝑔(𝑛)+ℎ(𝑛)f(n)=g(n)+h(n), where 𝑔(𝑛)g(n) is the actual cost from the start, and ℎ(𝑛)h(n) is the heuristic estimate to the goal. It’s efficient when the heuristic is accurate, focusing the search towards the goal.
 
 
-<img src="https://github.com/user-attachments/assets/d3fc9088-8af3-4c19-95c2-b14c7acb9374" width=50% height=50%>
 
+<img src="https://github.com/user-attachments/assets/d3fc9088-8af3-4c19-95c2-b14c7acb9374" width=50% height=50%>
 
 
 #### Dijkstra
@@ -613,7 +612,6 @@ Easy to Implement: BFS is straightforward to code and doesn’t require a heuris
 | **Breadth-First Search** | - Explores all nodes at the current depth before moving to the next level. <br> - Ideal for **unweighted** graphs and uses a queue.            | - Simple and easy to implement <br> - Guarantees shortest path in unweighted graphs | - Inefficient for weighted graphs <br> - Blind search <br> - Not scalable | - Optimal in unweighted graphs <br> - Slow in large graphs       |
 
 <h2 id="reflections">Reflections</h2>
-# Reflections
 
 Leung Tsz Hei 24082857d
 
