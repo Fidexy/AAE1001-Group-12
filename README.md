@@ -360,8 +360,8 @@ A simple algorithm searches for the array item with the lowest path cost, indica
     show_animation = True
 ~~~
 ### Result:
-<img src="https://github.com/user-attachments/assets/c5586965-5167-41e5-abef-99858ce7604e" alt="![image]" width="300" height="250">
 
+<img src="https://github.com/user-attachments/assets/dbade53e-217d-489d-987a-44daf2032f17" width=50% height=50%>
 
 <img src="https://github.com/user-attachments/assets/c0219a52-c966-486a-9796-cd136775812d" alt="![螢幕擷取畫面 2024-11-12 180408]" width="450" height="50">
 
