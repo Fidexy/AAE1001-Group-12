@@ -383,7 +383,7 @@ In this task, the new aircraft will be designed to achieve minimum cost for [sce
 
 ## Aircraft Spectifications
 #### Aircraft Name: A350-800 Max
-#### Flight: VHHH to RCTP
+#### Flight: VHHH to RCKH
 
 #### Passenger Capacity
 - Minimum: 100
@@ -438,7 +438,7 @@ C<sub>C</sub> = fixed cost independent of time
 ### Result: The minimum flight cost is $65210.20 ; with 450 passenger capacity ; 4 engines configuration
  - The design of 100-200 passenger capacity is not suitable because it exceed the flight limit for 12 flight per week maximum.
  - The overall result shows that use a four-engine configuration for capacities over 300 can maximize the number of passengers per flight, minimize the number of flights and balancing costs.
- - In the environmental aspect, the four-engine configuration might produce more carbon emissions and green house gas. Though the cost of four-engine is slightly lower than twin-engine.
+ - In the environmental aspect, the four-engine configuration might produce more carbon emissions and green house gas. Though the cost of four-engine is slightly lower than twin-engine. The carbon tax is not counted in this calculation.
 
 ![Scenario 1 cost based on passenger capacity ](https://github.com/user-attachments/assets/29622e57-1527-43fa-9ad3-6ef5c77e6d90)
 
@@ -618,8 +618,10 @@ Leung Tsz Hei 24082857d
 
 In this group project, I have learnt a lot of programming knowledge. I remember when I first received this assignment, I felt devastated because i have no previous knowledge on the A* algorithm. Fortunately, I had a great group of people who helped me understand the task. One of my groupmate have much more experience in coding and he taught me the meaning of the code patiently. For the work distribution, I was mainly responsible for the work on Task 3 and readme report. At the beginning, I had no idea how to edit the markdown format such as adding the heading, subheading, link and photo. After that, I watched lots of online tutorials which helped me familiarize with the typing style. I started to understand the meaning behind each markdown code. Now, I think I master the basic use of the markdown format report.
 
-<h2 id="contacts">Contacts</h2>
+
 Liu Wing Yin 24020287d
 
 Before starting this project, I had no knowledge of programming and felt quite nervous in this subject. However, I was fortunate to have groupmates who were skilled in programming and guided me throughout the process. Their patience and support made a huge difference in helping me understand the fundamentals. Additionally, with the assistance of AI tools, I was able to learn concepts more effectively and gain a clearer understanding of the tasks at hand. This project made me realize the growing importance of programming, especially with AI becoming a significant trend for the future. In terms of work distribution, I was mainly responsible for completing Task A3's GitHub README page and assisting with some calculations in other tasks. These responsibilities allowed me to apply what I learned and contribute meaningfully to the project. Overall, it has been a valuable experience and I believe the knowledge I gained will be highly useful in my future career.
+
+<h2 id="contacts">Contacts</h2>
 
