@@ -624,6 +624,11 @@ Liu Wing Yin 24020287d
 Before starting this project, I had no knowledge of programming and felt quite nervous in this subject. However, I was fortunate to have groupmates who were skilled in programming and guided me throughout the process. Their patience and support made a huge difference in helping me understand the fundamentals. Additionally, with the assistance of AI tools, I was able to learn concepts more effectively and gain a clearer understanding of the tasks at hand. This project made me realize the growing importance of programming, especially with AI becoming a significant trend for the future. In terms of work distribution, I was mainly responsible for completing Task A3's GitHub README page and assisting with some calculations in other tasks. These responsibilities allowed me to apply what I learned and contribute meaningfully to the project. Overall, it has been a valuable experience and I believe the knowledge I gained will be highly useful in my future career.
 
 Wong Tin Ching 24079084d
+
 It appears to me that I have learnt a lot from this project. Before this project, I have learnt basic knowledge from the lectures but it does not provide sufficient support to my project. Therefore, I tried to apply the use of GenAI to learn the details of tasks. Although at the end, my part is to calculate the cost manually and do research on JetStream, I have learnt more while my groupmates were doing their parts. This project allowed me to engage in using technology and provided me chances to understand more about the cost calculation for each flight in order to maximize the cost efficiency. In the presentation, I have talked about the introduction, cost calculations and the second challenge that our team faced. It provided me a chance to speak in front of students which allows me to practice my presentation skills and try to be brave.
+
+Au Bai Qiao 24077479d
+
+
 <h2 id="contacts">Contacts</h2>
 
