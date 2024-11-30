@@ -629,6 +629,5 @@ It appears to me that I have learnt a lot from this project. Before this project
 
 Au Bai Qiao 24077479d
 
-
-<h2 id="contacts">Contacts</h2>
+With a small amount of programming experience, I found this project a great opportunity to further hone my programming skills. At first, I was overwhelmed by the complexity of the path-planning algorithm, but then after learning a bit of Python, I started treating it as a simple function which returns the optimal route because I do not need to modify the algorith itself. This made completing the tasks way easier, in combination with using GenAI to break down tasks into smaller steps which I could easily complete with my own ability. While completing the tasks, I had to refer to online programming tutorials and read python language documentation and programming forums when encountering difficulties and errors. I also used GenAI to help with debugging. I felt rather proud as I was able to complete all the tasks as a solo programmer without major assistance from GenAI. I was quite shocked when the class was taught to use GenAI to code, as this would mean that other people would be able to quickly catch up on our progress. However, I recognized the effectiveness in using GenAI to assist in programming. While I was not able to make full use of GenAI to greatly assist in my project, I hope I will be able to do so in a more difficult project where programming accumen may not be sufficient to achieve the project goal.
 
